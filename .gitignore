@@ -1,33 +1,44 @@
-pom.xml
-*jar
-/lib/
-/classes/
-/target/
-.lein-deps-sum
-.lein-failures
-.lein-repl-history
+# files to be excluded from tracking by Git
 *~
-*.swp
-.dir-locals.el
-.nrepl-hist.eld
-.nrepl-port
-/.classpath
-/.project
-/.gradle
-/bin
-builds/
-checkouts/
-libs/clj-cas/clj-cas
-libs/clj-icat-direct/clj-icat-direct
-libs/clj-jargon/clj-jargon
-libs/heuristomancer/heuristomancer
-libs/iplant-clojure-commons/iplant-clojure-commons
-libs/kameleon/kameleon
-libs/mescal/mescal
-libs/metadactyl/metadactyl
-node_modules/
-.idea
-*.iml
+
+# eclipse-related files
+.classpath
+.options
+.project
+.settings
+
+# ignore war directory
+war
+
+# ignore directories related to GWT Unit Tests
+tomcat
+gwt-unitCache
+.gwt
+
+# ignore gradle build directory
+build
+target
+
+.gradle
+.metadata
+ucdetector_reports
+
+# the Mac .DS_Store directory
 .DS_Store
-services/*/*-build
-*.rpm
+
+# ignore intellij files
+*.ipr
+*.iws
+*.ids
+*.iml
+out/
+applications/config*
+.idea/
+
+#ignore class files
+*.class
+
+#ignore bin
+bin/
+#ignore logs
+log/

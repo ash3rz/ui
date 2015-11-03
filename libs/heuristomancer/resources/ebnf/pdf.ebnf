@@ -1,9 +1,0 @@
-s = header eol arbitrary_data
-
-header = #'%PDF-' version
-
-version = #'\d+[.]\d+'
-
-eol = #'(?:\r\n|\r|\n)'
-
-arbitrary_data = #'[\s\S]*'

@@ -1,8 +1,0 @@
-{
-  "metadata-db.tar.gz" : "databases-dev",
-  "notification-db.tar.gz" : "databases-dev",
-  "database.tar.gz" : "databases-dev",
-  "scm.tar.gz" : "scm-dev",
-  "jex-db.tar.gz" : "databases-dev",
-  "facepalm-standalone.jar" : "facepalm-dev"
-}

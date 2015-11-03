@@ -1,1 +1,0 @@
-S = #"[\s\S]*!!SEQUENCE_LIST[\s\S]+FASTA[\s\S]*"

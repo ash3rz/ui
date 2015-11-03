@@ -1,9 +1,0 @@
-# Ignore Emacs backup files.
-*~
-\#*
-
-# Ignore generated files.
-notification-db.tar.gz
-
-# Ignore eclipse project crap
-.project

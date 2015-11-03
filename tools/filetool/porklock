@@ -1,3 +1,0 @@
-#!/bin/bash
-
-java -cp /usr/local/lib/porklock/porklock-standalone.jar porklock.core $@
