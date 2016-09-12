@@ -1,4 +1,4 @@
-package org.iplantc.de.apps.client.views.grid.cells;
+package org.iplantc.de.apps.client.views.list.cells;
 
 import static com.google.gwt.dom.client.BrowserEvents.CLICK;
 
@@ -8,6 +8,8 @@ import org.iplantc.de.client.models.apps.App;
 
 import com.google.gwt.cell.client.AbstractCell;
 import com.google.gwt.cell.client.Cell;
+import com.google.gwt.cell.client.FieldUpdater;
+import com.google.gwt.cell.client.HasCell;
 import com.google.gwt.cell.client.ValueUpdater;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
@@ -24,7 +26,22 @@ import com.google.gwt.user.client.Event;
  * @author jstroot
  * 
  */
-public class AppNameCell extends AbstractCell<App> {
+public class AppNameCell extends AbstractCell<App> implements HasCell<App, App> {
+
+    @Override
+    public Cell<App> getCell() {
+        return this;
+    }
+
+    @Override
+    public FieldUpdater<App, App> getFieldUpdater() {
+        return null;
+    }
+
+    @Override
+    public App getValue(App object) {
+        return object;
+    }
 
     public interface AppNameCellAppearance {
         String ELEMENT_NAME = "appName";
@@ -44,7 +61,7 @@ public class AppNameCell extends AbstractCell<App> {
         String appPrivateNameClass();
 
         void render(SafeHtmlBuilder sb, App value, String textClassName, String searchPattern,
-                    String textToolTip, String debugId);
+                    String textToolTip, boolean separateFavoriteCell, String debugId);
 
         String run();
     }
@@ -54,6 +71,7 @@ public class AppNameCell extends AbstractCell<App> {
     private String baseID;
     private HasHandlers hasHandlers;
     protected String pattern;
+    private boolean separateFavoriteCell = false;
 
     public AppNameCell() {
         this(GWT.<AppNameCellAppearance> create(AppNameCellAppearance.class));
@@ -69,7 +87,10 @@ public class AppNameCell extends AbstractCell<App> {
         if (value == null) {
             return;
         }
-        favoriteCell.render(context, value, sb);
+
+        if (!separateFavoriteCell) {
+            favoriteCell.render(context, value, sb);
+        }
         String textClassName, textToolTip;
 
         if (value.isDisabled()) {
@@ -87,7 +108,7 @@ public class AppNameCell extends AbstractCell<App> {
         }
 
         String debugId = baseID + "." + value.getId() + AppsModule.Ids.APP_NAME_CELL;
-        appearance.render(sb, value, textClassName, pattern, textToolTip, debugId);
+        appearance.render(sb, value, textClassName, pattern, textToolTip, separateFavoriteCell, debugId);
     }
 
     @Override
@@ -97,7 +118,10 @@ public class AppNameCell extends AbstractCell<App> {
         if ((value == null) || !parent.isOrHasChild(eventTarget)) {
             return;
         }
-        favoriteCell.onBrowserEvent(context, parent, value, event, valueUpdater);
+
+        if (!separateFavoriteCell) {
+            favoriteCell.onBrowserEvent(context, parent, value, event, valueUpdater);
+        }
 
         Element child = findAppNameElement(parent);
         if (child != null && child.isOrHasChild(eventTarget)) {
@@ -142,4 +166,7 @@ public class AppNameCell extends AbstractCell<App> {
         return null;
     }
 
+    public void setSeparateFavoriteCell(boolean separateFavoriteCell) {
+        this.separateFavoriteCell = separateFavoriteCell;
+    }
 }

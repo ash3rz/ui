@@ -51,6 +51,7 @@
 }
 
 .appPrivate {
+    cursor: pointer;
     color: green;
     font-size: 12px;
     height: 15px;

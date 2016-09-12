@@ -4,7 +4,7 @@
 			 xmlns:container="urn:import:com.sencha.gxt.widget.core.client.container"
 			 xmlns:tabs="urn:import:com.sencha.gxt.widget.core.client"
 			 xmlns:tree="urn:import:com.sencha.gxt.widget.core.client.tree"
-			 xmlns:appWidgets="urn:import:org.iplantc.de.apps.client.views.grid.cells">
+			 xmlns:appWidgets="urn:import:org.iplantc.de.apps.client.views.list.cells">
 
 	<ui:with field="appearance"
 		type="org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance" />

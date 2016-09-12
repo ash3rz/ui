@@ -1,0 +1,9 @@
+.icon {
+    float:left;
+    margin: 10px 0 0 10px;
+    border: 1px solid #A5A4A4;
+}
+
+.icon:hover {
+    cursor: pointer;
+}

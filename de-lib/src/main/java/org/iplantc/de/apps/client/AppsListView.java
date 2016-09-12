@@ -3,6 +3,7 @@ package org.iplantc.de.apps.client;
 import org.iplantc.de.apps.client.events.AppFavoritedEvent;
 import org.iplantc.de.apps.client.events.AppSearchResultLoadEvent;
 import org.iplantc.de.apps.client.events.BeforeAppSearchEvent;
+import org.iplantc.de.apps.client.events.SwapViewButtonClickedEvent;
 import org.iplantc.de.apps.client.events.selection.AppCategorySelectionChangedEvent;
 import org.iplantc.de.apps.client.events.selection.AppCommentSelectedEvent;
 import org.iplantc.de.apps.client.events.selection.AppFavoriteSelectedEvent;
@@ -24,19 +25,15 @@ import com.sencha.gxt.data.shared.event.StoreAddEvent;
 import com.sencha.gxt.data.shared.event.StoreClearEvent;
 import com.sencha.gxt.data.shared.event.StoreRemoveEvent;
 import com.sencha.gxt.data.shared.event.StoreUpdateEvent;
-import com.sencha.gxt.widget.core.client.grid.Grid;
+import com.sencha.gxt.dnd.core.client.DragSource;
+import com.sencha.gxt.widget.core.client.container.CardLayoutContainer;
+
+import java.util.List;
 
 /**
- * This view is responsible for displaying lists of {@link App}s resulting for {@link AppCategory}
- * selection or App searches.
- *
- * It is also responsible for relaying user-related events from the listed Apps, primarily selection
- * events.
- *
- * Created by jstroot on 3/5/15.
- * @author jstroot
+ * @author aramsey
  */
-public interface AppsGridView extends IsWidget,
+public interface AppsListView extends IsWidget,
                                       IsMaskable,
                                       AppSelectionChangedEvent.HasAppSelectionChangedEventHandlers,
                                       AppInfoSelectedEvent.HasAppInfoSelectedEventHandlers,
@@ -49,8 +46,11 @@ public interface AppsGridView extends IsWidget,
                                       AppCategorySelectionChangedEvent.AppCategorySelectionChangedEventHandler,
                                       AppFavoritedEvent.HasAppFavoritedEventHandlers,
                                       BeforeAppSearchEvent.BeforeAppSearchEventHandler,
-                                      OntologyHierarchySelectionChangedEvent.OntologyHierarchySelectionChangedEventHandler{
-    interface AppsGridAppearance {
+                                      OntologyHierarchySelectionChangedEvent.OntologyHierarchySelectionChangedEventHandler {
+    String GRID_VIEW = "grid";
+    String TILE_VIEW = "tile";
+
+    interface AppsListAppearance {
 
         String appLaunchWithoutToolError();
 
@@ -73,14 +73,16 @@ public interface AppsGridView extends IsWidget,
         String agaveAuthRequiredTitle();
 
         String agaveAuthRequiredMsg();
+
+        String sortLabel();
     }
 
     /**
-     * This presenter is responsible for updating/maintaining the {@code ListStore} associated with
-     * the view. It fires store related events for other presenters. \
+     * This presenter is responsible for updating/maintaining the {@code ListStore} associated with the
+     * view. It fires store related events for other presenters. \
      *
-     * To update the {@code ListStore}, it listens for {@link AppCategory}
-     * selection and search result load events.
+     * To update the {@code ListStore}, it listens for {@link AppCategory} selection and search result
+     * load events.
      */
     interface Presenter extends AppCategorySelectionChangedEvent.AppCategorySelectionChangedEventHandler,
                                 AppSearchResultLoadEvent.AppSearchResultLoadEventHandler,
@@ -88,16 +90,29 @@ public interface AppsGridView extends IsWidget,
                                 StoreRemoveEvent.HasStoreRemoveHandler<App>,
                                 StoreUpdateEvent.HasStoreUpdateHandlers<App>,
                                 StoreClearEvent.HasStoreClearHandler<App>,
-                                AppFavoritedEvent.HasAppFavoritedEventHandlers,
                                 DeleteAppsSelected.DeleteAppsSelectedHandler,
                                 RunAppSelected.RunAppSelectedHandler,
-                                OntologyHierarchySelectionChangedEvent.OntologyHierarchySelectionChangedEventHandler {
+                                BeforeAppSearchEvent.BeforeAppSearchEventHandler,
+                                OntologyHierarchySelectionChangedEvent.OntologyHierarchySelectionChangedEventHandler,
+                                SwapViewButtonClickedEvent.SwapViewButtonClickedEventHandler,
+                                AppSelectionChangedEvent.HasAppSelectionChangedEventHandlers,
+                                AppInfoSelectedEvent.HasAppInfoSelectedEventHandlers {
         App getSelectedApp();
 
-        AppsGridView getView();
+        List<DragSource> getAppsDragSources();
+
+        void go(CardLayoutContainer container);
+
+        void setViewDebugId(String baseID);
     }
 
-    Grid<App> getGrid();
+    List<DragSource> getAppsDragSources();
+
+    App getSelectedItem();
+
+    void select(App app, boolean keepExisting);
+
+    void deselectAll();
 
     void setSearchPattern(String searchPattern);
 

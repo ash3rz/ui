@@ -26,6 +26,7 @@ public class AdminAppNameCellDefaultAppearance extends AppNameCellDefaultAppeara
                          resources.css().appDisabled(),
                          searchPattern,
                          appUnavailable(),
+                         false,
                          null);
         } else if(value.isBeta() != null && value.isBeta()) {
             super.render(sb,
@@ -33,6 +34,7 @@ public class AdminAppNameCellDefaultAppearance extends AppNameCellDefaultAppeara
                          resources.css().appBeta(),
                          searchPattern,
                          displayStrings.editApp(),
+                         false,
                          null);
         } else if (!value.isPublic()) {
             super.render(sb,
@@ -40,6 +42,7 @@ public class AdminAppNameCellDefaultAppearance extends AppNameCellDefaultAppeara
                          resources.css().appPrivate(),
                          searchPattern,
                          displayStrings.editApp(),
+                         false,
                          null);
         } else {
             super.render(sb,
@@ -47,6 +50,7 @@ public class AdminAppNameCellDefaultAppearance extends AppNameCellDefaultAppeara
                          resources.css().appName(),
                          searchPattern,
                          displayStrings.editApp(),
+                         false,
                          null);
         }
     }

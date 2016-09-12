@@ -1,8 +1,8 @@
 package org.iplantc.de.pipelines.client.presenter;
 
+import org.iplantc.de.apps.client.AppsView;
 import org.iplantc.de.apps.client.events.AppCategoryCountUpdateEvent;
 import org.iplantc.de.apps.client.events.AppSavedEvent;
-import org.iplantc.de.apps.client.AppsView;
 import org.iplantc.de.client.events.EventBus;
 import org.iplantc.de.client.gin.ServicesInjector;
 import org.iplantc.de.client.models.apps.App;
@@ -38,13 +38,12 @@ import com.google.web.bindery.autobean.shared.Splittable;
 
 import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.dnd.core.client.DND.Operation;
+import com.sencha.gxt.dnd.core.client.DragSource;
 import com.sencha.gxt.dnd.core.client.DropTarget;
-import com.sencha.gxt.dnd.core.client.GridDragSource;
 import com.sencha.gxt.widget.core.client.Dialog;
 import com.sencha.gxt.widget.core.client.container.Container;
 import com.sencha.gxt.widget.core.client.container.VerticalLayoutContainer;
 import com.sencha.gxt.widget.core.client.form.error.DefaultEditorError;
-import com.sencha.gxt.widget.core.client.grid.Grid;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -128,20 +127,21 @@ public class PipelineViewPresenter implements Presenter, PipelineView.Presenter,
         appSelectView = new AppSelectionDialog();
         appSelectView.setPresenter(this);
 
-        initAppsGridDragHandler(appsPresenter.getAppsGrid());
+        initAppsDragHandlers(appsPresenter.getAppsDragSources());
         initPipelineBuilderDropHandler(view.getBuilderDropContainer());
 
         // TODO Possibly inject with annotation to replace with a different toolbar impl
         appsPresenter.hideAppMenu().hideWorkflowMenu().go(appSelectView, null, null);
     }
 
-    private void initAppsGridDragHandler(Grid<App> grid) {
+    private void initAppsDragHandlers(List<DragSource> sources) {
         AppsGridDragHandler handler = new AppsGridDragHandler();
         handler.setPresenter(this);
 
-        GridDragSource<App> source = new GridDragSource<>(grid);
-        source.addDragStartHandler(handler);
-        source.addDragCancelHandler(handler);
+        for (DragSource source : sources) {
+            source.addDragStartHandler(handler);
+            source.addDragCancelHandler(handler);
+        }
     }
 
     private void initPipelineBuilderDropHandler(Container builderPanel) {

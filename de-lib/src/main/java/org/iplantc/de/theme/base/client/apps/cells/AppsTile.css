@@ -1,0 +1,105 @@
+@def marginLeft 10px;
+@def cardWidth 60px;
+
+@def fontSize 12px;
+@def lineHeight 1.4;
+@def linesToShow 3;
+/* The above values are used to calculate the height of the app name's area */
+@eval nameBoxHeight 12*1.4*3+"px";
+/* The card width plus its 10px margin on both sides*/
+@eval centerMargin 10*2+60+"px";
+
+.tileCell {
+    width: 260px;
+    height: 100px;
+    margin: 15px 0 0 15px;
+    position: relative;
+    float: left;
+    background-size: 70px;
+    background-position-x: 0px;
+    cursor: hand;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.tileCell:hover {
+    background-color: rgb(238,238,238);
+    outline: rgb(208,208,208) solid 2px;
+}
+
+.tileCellSelect {
+    background-color: rgb(238,238,238);
+    outline: rgb(208,208,208) solid 2px;
+}
+
+.infoMod {
+    position: absolute;
+    bottom: 2px;
+    left: marginLeft;
+}
+
+.infoMod:hover {
+    background-color: rgb(238,238,238);
+    outline: rgb(208,208,208) solid 2px;
+}
+
+.commentMod {
+    position: absolute;
+    bottom: 5px;
+    left: 35px;
+}
+
+.commentMod:hover {
+    background-color: rgb(238,238,238);
+    outline: rgb(208,208,208) solid 2px;
+}
+
+.nameMod {
+    position: absolute;
+    top: 10px;
+    left: centerMargin;
+    float: left;
+    word-break: break-word;
+    width: 160px;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    height: nameBoxHeight;
+    text-overflow: ellipsis;
+    line-height: lineHeight;
+    display: -webkit-box;
+    /*transform: translate(-50%, -50%);*/
+}
+
+.nameMod:hover {
+    text-decoration: underline;
+}
+
+.favoriteMod {
+    position: absolute;
+    bottom: 4px;
+    left: 58px;
+}
+
+.favoriteMod:hover {
+    background-color: rgb(238,238,238);
+    outline: rgb(208,208,208) solid 2px;
+}
+
+.integratorMod {
+    position: absolute;
+    bottom: 26px;
+    left: centerMargin;
+    width: 160px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 11px;
+    font-style: italic;
+}
+
+.ratingMod {
+    position: absolute;
+    cursor: pointer;
+    left: centerMargin;
+    bottom: 4px;
+}

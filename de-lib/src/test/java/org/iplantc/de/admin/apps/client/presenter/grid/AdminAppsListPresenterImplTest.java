@@ -55,7 +55,7 @@ import java.util.List;
  * @author jstroot
  */
 @RunWith(GwtMockitoTestRunner.class)
-public class AdminAppsGridPresenterImplTest {
+public class AdminAppsListPresenterImplTest {
 
     @Mock AdminAppsGridViewFactory viewFactoryMock;
     @Mock AppAdminServiceFacade adminAppServiceMock;

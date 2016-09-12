@@ -5,7 +5,7 @@ import org.iplantc.de.admin.apps.client.views.grid.cells.AdminAppNameCell;
 import org.iplantc.de.apps.client.events.selection.AppInfoSelectedEvent;
 import org.iplantc.de.apps.client.events.selection.AppNameSelectedEvent;
 import org.iplantc.de.apps.client.models.AppProperties;
-import org.iplantc.de.apps.client.views.grid.cells.AppInfoCell;
+import org.iplantc.de.apps.client.views.list.cells.AppInfoCell;
 import org.iplantc.de.client.models.apps.App;
 
 import com.google.gwt.cell.client.Cell;
