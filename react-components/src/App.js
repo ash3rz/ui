@@ -1,21 +1,51 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {hasClipboardAPI, copySelection} from './clipboardFunctions'
 import './App.css';
 
 class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
-  }
+    constructor(props) {
+        super(props);
+
+        // This binding is necessary to make `this` work in the callback
+        this.onCopyText = this.onCopyText.bind(this);
+    }
+
+    renderCopyTextArea(text) {
+        return <textArea ref="copyTextArea" value={text} readOnly="readonly" />;
+    }
+
+    renderCopyButton() {
+        if (hasClipboardAPI()) {
+            return <button ref="copyTextBtn" type="button" onClick={this.onCopyText}>Copy</button>;
+        }
+    }
+
+    onCopyText(e) {
+        e.preventDefault();
+
+        this.refs.copyTextArea.select();
+        if (copySelection()) {
+            this.refs.copyTextBtn.innerText = "Copied!";
+        }
+    }
+
+    componentDidMount() {
+        if (!hasClipboardAPI()) {
+            this.refs.copyTextArea.select();
+        }
+    }
+
+    render() {
+        let copyTextArea = this.renderCopyTextArea(this.props.text),
+            copyButton = this.renderCopyButton();
+
+        return (
+            <div className="App">
+                {copyTextArea}
+                {copyButton}
+            </div>
+        );
+    }
 }
 
 export default App;
