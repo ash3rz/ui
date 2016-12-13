@@ -14,9 +14,9 @@ class App extends Component {
         return <textArea ref="copyTextArea" value={text} readOnly="readonly" />;
     }
 
-    renderCopyButton() {
+    renderCopyButton(btnText) {
         if (hasClipboardAPI()) {
-            return <button ref="copyTextBtn" type="button" onClick={this.onCopyText}>Copy</button>;
+            return <button ref="copyTextBtn" type="button" onClick={this.onCopyText}>{btnText}</button>;
         }
     }
 
@@ -37,7 +37,7 @@ class App extends Component {
 
     render() {
         let copyTextArea = this.renderCopyTextArea(this.props.text),
-            copyButton = this.renderCopyButton();
+            copyButton = this.renderCopyButton(this.props.btnText);
 
         return (
             <div className="App">

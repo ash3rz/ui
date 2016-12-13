@@ -57,7 +57,7 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: [
     require.resolve('./polyfills'),
-    paths.appIndexJs
+    paths.appLibJs
   ],
   output: {
     // The build folder.
@@ -72,7 +72,8 @@ module.exports = {
     // set on async-loaded chunks is set to anonymous.
     crossOriginLoading: 'anonymous',
     // We inferred the "public path" (such as / or /my-project) from homepage.
-    publicPath: publicPath
+    publicPath: publicPath,
+    library: "CyVerseReactComponents"
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
@@ -118,6 +119,7 @@ module.exports = {
       // assets smaller than specified size as data URLs to avoid requests.
       {
         exclude: [
+          /\.ejs$/,
           /\.html$/,
           /\.(js|jsx)$/,
           /\.css$/,
@@ -194,8 +196,9 @@ module.exports = {
     }),
     // Generates an `index.html` file with the <script> injected.
     new HtmlWebpackPlugin({
-      inject: true,
+      inject: false,
       template: paths.appHtml,
+      filename: "../WEB-INF/jsp/react_include.jsp",
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -204,9 +207,9 @@ module.exports = {
         removeEmptyAttributes: true,
         removeStyleLinkTypeAttributes: true,
         keepClosingSlash: true,
-        minifyJS: true,
-        minifyCSS: true,
-        minifyURLs: true
+        minifyJS: false,
+        minifyCSS: false,
+        minifyURLs: false
       }
     }),
     // Makes some environment variables available to the JS code, for example:
@@ -219,19 +222,19 @@ module.exports = {
     // Try to dedupe duplicated modules, if any:
     new webpack.optimize.DedupePlugin(),
     // Minify the code.
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        screw_ie8: true, // React doesn't support IE8
-        warnings: false
-      },
-      mangle: {
-        screw_ie8: true
-      },
-      output: {
-        comments: false,
-        screw_ie8: true
-      }
-    }),
+    // new webpack.optimize.UglifyJsPlugin({
+    //   compress: {
+    //     screw_ie8: true, // React doesn't support IE8
+    //     warnings: false
+    //   },
+    //   mangle: {
+    //     screw_ie8: true
+    //   },
+    //   output: {
+    //     comments: false,
+    //     screw_ie8: true
+    //   }
+    // }),
     // Note: this won't work without ExtractTextPlugin.extract(..) in `loaders`.
     new ExtractTextPlugin('static/css/[name].[contenthash:8].css'),
     // Generate a manifest file which contains a mapping of all asset filenames

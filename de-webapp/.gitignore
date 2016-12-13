@@ -51,3 +51,7 @@ clavin-*-standalone.jar
 
 # ignore gradle build directory
 build/
+
+# ignore react build artifacts
+src/main/webapp/react_components/
+src/main/webapp/WEB-INF/jsp/react_include.jsp

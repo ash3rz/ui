@@ -4,7 +4,7 @@ import App from './App';
 import './index.css';
 
 ReactDOM.render(
-    <App text={
+    <App btnText='Copy' text={
 `Can we copy?
 Yes we can!!!`
     }/>,

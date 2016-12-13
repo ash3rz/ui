@@ -31,10 +31,12 @@ var nodePaths = (process.env.NODE_PATH || '')
 
 // config after eject: we're in ./config/
 module.exports = {
-  appBuild: resolveApp('build'),
+  appBuild: resolveApp('../de-webapp/src/main/webapp/react_components'),
   appPublic: resolveApp('public'),
-  appHtml: resolveApp('public/index.html'),
+  appHtml: resolveApp('public/index.ejs'),
+  devHtml: resolveApp('public/index.html'),
   appIndexJs: resolveApp('src/index.js'),
+  appLibJs: resolveApp('src/lib.js'),
   appPackageJson: resolveApp('package.json'),
   appSrc: resolveApp('src'),
   yarnLockFile: resolveApp('yarn.lock'),
