@@ -1,8 +1,11 @@
+/**
+ * @author psarando
+ */
 import React, { Component } from 'react';
 import {hasClipboardAPI, copySelection} from './clipboardFunctions'
 import './App.css';
 
-class App extends Component {
+class CopyTextArea extends Component {
     constructor(props) {
         super(props);
 
@@ -48,4 +51,4 @@ class App extends Component {
     }
 }
 
-export default App;
+export default CopyTextArea;

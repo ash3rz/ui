@@ -1,14 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+import ToolDetails from './ToolDetails';
+import CopyTextArea from './CopyTextArea';
 import './index.css';
 
 
-const renderCopyTextArea = (elementID, btnText, textToCopy) => {
+const renderToolDetails = (elementID, ToolDetailsAppearance, ToolInfo) => {
     ReactDOM.render(
-        <App btnText={btnText} text={ textToCopy }/>,
+        <ToolDetails appearance={ToolDetailsAppearance} toolInfo={ToolInfo} />,
         document.getElementById(elementID)
     );
 };
 
-export { renderCopyTextArea };
+const renderCopyTextArea = (elementID, btnText, textToCopy) => {
+    ReactDOM.render(
+        <CopyTextArea btnText={btnText} text={ textToCopy }/>,
+        document.getElementById(elementID)
+    );
+};
+
+export { renderCopyTextArea, renderToolDetails };
