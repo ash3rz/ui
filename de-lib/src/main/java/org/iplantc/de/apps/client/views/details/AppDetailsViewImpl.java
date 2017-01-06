@@ -263,7 +263,7 @@ public class AppDetailsViewImpl extends Composite implements
             public void execute() {
                 renderToolDetails(toolsContainer.getId(),
                                   getAppDetailsAppearanceShim(appearance),
-                                  AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app.getTools().get(0))));
+                                  AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app)));
             }
         });
     }
@@ -272,24 +272,26 @@ public class AppDetailsViewImpl extends Composite implements
         $wnd.CyVerseReactComponents.renderCopyTextArea(elementID, btnText, textToCopy);
     }-*/;
 
-    public static native void renderToolDetails(String elementID, JavaScriptObject appearance, Splittable toolInfo) /*-{
-        $wnd.CyVerseReactComponents.renderToolDetails(elementID, appearance, toolInfo);
+    public static native void renderToolDetails(String elementID, JavaScriptObject appearance, Splittable app) /*-{
+        $wnd.CyVerseReactComponents.renderToolDetails(elementID, appearance, app);
     }-*/;
 
     public static native JavaScriptObject getAppDetailsAppearanceShim(AppDetailsView.AppDetailsAppearance appearance) /*-{
         var css = appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::css()();
 
         return {
-            css: {
-                label: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::label()(),
-                value: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::value()()
+            css: function() {
+                return {
+                    label: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::label(),
+                    value: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::value()
+                };
             },
-            detailsLabel:         appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::detailsLabel()(),
-            toolNameLabel:        appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolNameLabel()(),
-            descriptionLabel:     appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::descriptionLabel()(),
-            toolPathLabel:        appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolPathLabel()(),
-            toolVersionLabel:     appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolVersionLabel()(),
-            toolAttributionLabel: appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolAttributionLabel()()
+            detailsLabel:         function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::detailsLabel()(); },
+            toolNameLabel:        function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolNameLabel()(); },
+            descriptionLabel:     function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::descriptionLabel()(); },
+            toolPathLabel:        function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolPathLabel()(); },
+            toolVersionLabel:     function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolVersionLabel()(); },
+            toolAttributionLabel: function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolAttributionLabel()(); }
         };
     }-*/;
 

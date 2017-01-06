@@ -5,9 +5,9 @@ import CopyTextArea from './CopyTextArea';
 import './index.css';
 
 
-const renderToolDetails = (elementID, ToolDetailsAppearance, ToolInfo) => {
+const renderToolDetails = (elementID, toolDetailsAppearance, app) => {
     ReactDOM.render(
-        <ToolDetails appearance={ToolDetailsAppearance} toolInfo={ToolInfo} />,
+        <ToolDetails appearance={toolDetailsAppearance} app={app} />,
         document.getElementById(elementID)
     );
 };
