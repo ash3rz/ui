@@ -157,6 +157,9 @@ public class AppDetailsViewImpl extends Composite implements
     @UiField (provided = true)
     @Ignore
     Tree<OntologyHierarchy, SafeHtml> hierarchyTree;
+    @UiField
+    @Ignore
+    HTMLPanel hierarchyWidget;
     @UiField(provided = true) @Ignore TreeStore<OntologyHierarchy> hierarchyTreeStore;
     @UiField(provided = true) @Ignore Tree<AppCategory, String> categoryTree;
     @UiField(provided = true) @Ignore TreeStore<AppCategory> categoryTreeStore;
@@ -261,9 +264,11 @@ public class AppDetailsViewImpl extends Composite implements
 
             @Override
             public void execute() {
-                renderToolDetails(toolsContainer.getId(),
-                                  getAppDetailsAppearanceShim(appearance),
-                                  AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app)));
+                final JavaScriptObject appearanceShim = getAppDetailsAppearanceShim(appearance);
+                final Splittable appJson = AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app));
+
+                renderToolDetails(toolsContainer.getId(), appearanceShim, appJson);
+                renderCategoryTree(hierarchyWidget.getElement().getId(), appearanceShim, appJson);
             }
         });
     }
@@ -274,6 +279,10 @@ public class AppDetailsViewImpl extends Composite implements
 
     public static native void renderToolDetails(String elementID, JavaScriptObject appearance, Splittable app) /*-{
         $wnd.CyVerseReactComponents.renderToolDetails(elementID, appearance, app);
+    }-*/;
+
+    public static native void renderCategoryTree(String elementID, JavaScriptObject appearance, Splittable app) /*-{
+        $wnd.CyVerseReactComponents.renderCategoryTree(elementID, appearance, app);
     }-*/;
 
     public static native JavaScriptObject getAppDetailsAppearanceShim(AppDetailsView.AppDetailsAppearance appearance) /*-{
@@ -302,6 +311,7 @@ public class AppDetailsViewImpl extends Composite implements
         favIcon.setBaseDebugId(baseID);
         toolsContainer.ensureDebugId(baseID + AppsModule.Ids.APP_TOOLS);
         toolEditorSource.setBaseDebugId(baseID);
+        hierarchyWidget.ensureDebugId(baseID + AppsModule.Ids.CATEGORIES_TREE);
     }
 
     @Override

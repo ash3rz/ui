@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ToolDetails from './ToolDetails';
 import CopyTextArea from './CopyTextArea';
-import './index.css';
-
+import CategoryTree from './CategoryTree';
 
 const renderToolDetails = (elementID, toolDetailsAppearance, app) => {
     ReactDOM.render(
@@ -19,4 +18,11 @@ const renderCopyTextArea = (elementID, btnText, textToCopy) => {
     );
 };
 
-export { renderCopyTextArea, renderToolDetails };
+const renderCategoryTree = (elementID, appearance, app) => {
+    ReactDOM.render(
+        <CategoryTree appearance={appearance} app={app} />,
+        document.getElementById(elementID)
+    );
+};
+
+export { renderCopyTextArea, renderToolDetails, renderCategoryTree };

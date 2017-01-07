@@ -123,6 +123,7 @@
                         <td>
                             <tree:Tree ui:field="categoryTree" store="{categoryTreeStore}"/>
                             <tree:Tree ui:field="hierarchyTree" store="{hierarchyTreeStore}"/>
+                            <g:HTMLPanel ui:field="hierarchyWidget" />
                         </td>
                     </tr>
 
