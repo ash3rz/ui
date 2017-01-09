@@ -19,9 +19,9 @@ const renderCopyTextArea = (elementID, btnText, textToCopy) => {
     );
 };
 
-const renderCategoryTree = (elementID, appearance, app) => {
+const renderCategoryTree = (elementID, app, presenter, appearance) => {
     ReactDOM.render(
-        <CategoryTree appearance={appearance} app={app} />,
+        <CategoryTree app={app} presenter={presenter} appearance={appearance} />,
         document.getElementById(elementID)
     );
 };

@@ -264,11 +264,12 @@ public class AppDetailsViewImpl extends Composite implements
 
             @Override
             public void execute() {
+                final JavaScriptObject presenterShim = getPresenterShim(AppDetailsViewImpl.this);
                 final JavaScriptObject appearanceShim = getAppDetailsAppearanceShim(appearance);
                 final Splittable appJson = AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app));
 
                 renderToolDetails(toolsContainer.getId(), appearanceShim, appJson);
-                renderCategoryTree(hierarchyWidget.getElement().getId(), appearanceShim, appJson);
+                renderCategoryTree(hierarchyWidget.getElement().getId(), appJson, presenterShim, appearanceShim);
             }
         });
     }
@@ -281,8 +282,8 @@ public class AppDetailsViewImpl extends Composite implements
         $wnd.CyVerseReactComponents.renderToolDetails(elementID, appearance, app);
     }-*/;
 
-    public static native void renderCategoryTree(String elementID, JavaScriptObject appearance, Splittable app) /*-{
-        $wnd.CyVerseReactComponents.renderCategoryTree(elementID, appearance, app);
+    public static native void renderCategoryTree(String elementID, Splittable app, JavaScriptObject presenter, JavaScriptObject appearance) /*-{
+        $wnd.CyVerseReactComponents.renderCategoryTree(elementID, app, presenter, appearance);
     }-*/;
 
     public static native JavaScriptObject getAppDetailsAppearanceShim(AppDetailsView.AppDetailsAppearance appearance) /*-{
@@ -303,6 +304,22 @@ public class AppDetailsViewImpl extends Composite implements
             toolAttributionLabel: function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolAttributionLabel()(); }
         };
     }-*/;
+
+    public static native JavaScriptObject getPresenterShim(AppDetailsView presenter) /*-{
+        return {
+            onDetailsCategoryClicked: function(selection) {
+                presenter.@org.iplantc.de.apps.client.AppDetailsView::onDetailsCategoryClicked(Ljava/lang/String;)(selection);
+            }
+        };
+    }-*/;
+
+    @Override
+    public void onDetailsCategoryClicked(String modelKey) {
+        OntologyHierarchy hierarchy = hierarchyTreeStore.findModelWithKey(modelKey);
+        if (hierarchy != null) {
+            fireEvent(new DetailsHierarchyClicked(hierarchy));
+        }
+    }
 
     @Override
     protected void onEnsureDebugId(String baseID) {

@@ -10,21 +10,22 @@ class CategoryTree extends Component {
         super(props);
 
         // This binding is necessary to make `this` work in the callback
-        this.onHierarchySelectionChange = this.onHierarchySelectionChange.bind(this);
+        this.onDetailsCategoryClicked = this.onDetailsCategoryClicked.bind(this);
     }
 
-    onHierarchySelectionChange(selectedKeys, event) {
-        let selectedHierarchy = selectedKeys;
-        console.log(selectedHierarchy);
+    onDetailsCategoryClicked(selectedKeys, event) {
+        let modelKey = selectedKeys[0];
+        this.props.presenter.onDetailsCategoryClicked(modelKey);
     }
 
-    renderHierarchyNode(hierarchyClass) {
+    renderHierarchyNode(hierarchyClass, parentKey) {
+        let modelKey = (parentKey ? parentKey + "/" : "") + hierarchyClass.label;
         return (
-            <TreeNode key={hierarchyClass.iri}
+            <TreeNode key={modelKey}
                       title={hierarchyClass.label} >
                 {
                     hierarchyClass.subclasses ?
-                        hierarchyClass.subclasses.map( (subclass) => this.renderHierarchyNode(subclass) )
+                        hierarchyClass.subclasses.map( (subclass) => this.renderHierarchyNode(subclass, modelKey) )
                         : null
                 }
             </TreeNode>
@@ -37,7 +38,7 @@ class CategoryTree extends Component {
         return (
             <Tree
                 defaultExpandAll={false}
-                onSelect={this.onHierarchySelectionChange} >
+                onSelect={this.onDetailsCategoryClicked} >
                 {hierarchies.map( (hierarchyClass) => this.renderHierarchyNode(hierarchyClass) )}
             </Tree>
         );

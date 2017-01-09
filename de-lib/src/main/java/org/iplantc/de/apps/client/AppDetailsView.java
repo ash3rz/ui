@@ -125,4 +125,6 @@ public interface AppDetailsView extends IsWidget,
      * Displays the documentation window
      */
     void showDoc(AppDoc appDoc);
+
+    void onDetailsCategoryClicked(String modelKey);
 }

@@ -5,6 +5,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import CategoryTree from '../apps/details/CategoryTree';
 
+const presenter = {
+    onDetailsCategoryClicked: (selection) => {
+        console.log(selection);
+    }
+};
+
 const app = {
     hierarchies: [
         {
@@ -55,7 +61,7 @@ const app = {
 const renderElement = document.getElementById('category-tree');
 if (renderElement) {
     ReactDOM.render(
-        <CategoryTree app={app}/>,
+        <CategoryTree app={app} presenter={presenter} />,
         renderElement
     );
 }
