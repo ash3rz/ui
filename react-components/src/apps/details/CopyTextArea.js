@@ -2,8 +2,8 @@
  * @author psarando
  */
 import React, { Component } from 'react';
-import {hasClipboardAPI, copySelection} from './clipboardFunctions'
-import './App.css';
+import {hasClipboardAPI, copySelection} from '../../clipboardFunctions'
+import '../../App.css';
 
 class CopyTextArea extends Component {
     constructor(props) {

@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToolDetails from './ToolDetails';
-import CopyTextArea from './CopyTextArea';
-import CategoryTree from './CategoryTree';
+
+import CategoryTree from './apps/details/CategoryTree';
+import CopyTextArea from './apps/details/CopyTextArea';
+import ToolDetails from './apps/details/ToolDetails';
 
 const renderToolDetails = (elementID, toolDetailsAppearance, app) => {
     ReactDOM.render(

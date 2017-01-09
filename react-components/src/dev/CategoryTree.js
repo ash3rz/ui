@@ -3,7 +3,7 @@
  */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import CategoryTree from '../CategoryTree';
+import CategoryTree from '../apps/details/CategoryTree';
 
 const app = {
     hierarchies: [
@@ -52,7 +52,10 @@ const app = {
     ]
 };
 
-ReactDOM.render(
-    <CategoryTree app={app} />,
-    document.getElementById('category-tree')
-);
+const renderElement = document.getElementById('category-tree');
+if (renderElement) {
+    ReactDOM.render(
+        <CategoryTree app={app}/>,
+        renderElement
+    );
+}

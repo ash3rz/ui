@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ToolDetails from '../ToolDetails';
+import ToolDetails from '../apps/details/ToolDetails';
 
 const toolDetailsAppearance = {
     css: () => (
@@ -38,7 +38,10 @@ const app = {
     ]
 };
 
-ReactDOM.render(
-    <ToolDetails appearance={toolDetailsAppearance} app={app} />,
-    document.getElementById('tool-info')
-);
+const renderElement = document.getElementById('tool-info');
+if (renderElement) {
+    ReactDOM.render(
+        <ToolDetails appearance={toolDetailsAppearance} app={app}/>,
+        renderElement
+    );
+}

@@ -12,6 +12,8 @@ var WebpackDevServer = require('webpack-dev-server');
 var historyApiFallback = require('connect-history-api-fallback');
 var httpProxyMiddleware = require('http-proxy-middleware');
 var detect = require('detect-port');
+var fs = require('fs-extra');
+var HtmlWebpackPlugin = require('html-webpack-plugin');
 var clearConsole = require('react-dev-utils/clearConsole');
 var checkRequiredFiles = require('react-dev-utils/checkRequiredFiles');
 var formatWebpackMessages = require('react-dev-utils/formatWebpackMessages');
@@ -27,7 +29,7 @@ var cli = useYarn ? 'yarn' : 'npm';
 var isInteractive = process.stdout.isTTY;
 
 // Warn and crash if required files are missing
-if (!checkRequiredFiles([paths.appHtml, paths.appIndexJs])) {
+if (!checkRequiredFiles([paths.devHtml, paths.appIndexJs])) {
   process.exit(1);
 }
 
@@ -274,10 +276,25 @@ function runDevServer(host, port, protocol) {
 }
 
 function run(port) {
-  var protocol = process.env.HTTPS === 'true' ? "https" : "http";
-  var host = process.env.HOST || 'localhost';
-  setupCompiler(host, port, protocol);
-  runDevServer(host, port, protocol);
+  fs.walk(paths.devDir)
+    .on('data', function (item) {
+        if (item.stats.isFile()) {
+            // Generates an `*.html` file with the <script> injected.
+            config.plugins.push(
+                new HtmlWebpackPlugin({
+                    inject: true,
+                    filename: item.path.replace(/.*dev\//, ""),
+                    template: item.path,
+                })
+            );
+        }
+    })
+    .on('end', function () {
+        var protocol = process.env.HTTPS === 'true' ? "https" : "http";
+        var host = process.env.HOST || 'localhost';
+        setupCompiler(host, port, protocol);
+        runDevServer(host, port, protocol);
+    });
 }
 
 // We attempt to use the default port but if it is busy, we offer the user to

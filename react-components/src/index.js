@@ -1,3 +1,3 @@
-import './examples/CopyTextArea';
-import './examples/ToolDetails';
-import './examples/CategoryTree';
+import './dev/CopyTextArea';
+import './dev/ToolDetails';
+import './dev/CategoryTree';
