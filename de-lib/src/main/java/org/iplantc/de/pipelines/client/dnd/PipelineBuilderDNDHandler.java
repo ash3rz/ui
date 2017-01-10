@@ -3,6 +3,8 @@ package org.iplantc.de.pipelines.client.dnd;
 import org.iplantc.de.client.models.apps.App;
 import org.iplantc.de.resources.client.messages.I18N;
 
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
+
 import com.sencha.gxt.dnd.core.client.DndDragCancelEvent;
 import com.sencha.gxt.dnd.core.client.DndDragCancelEvent.DndDragCancelHandler;
 import com.sencha.gxt.dnd.core.client.StatusProxy;
@@ -43,11 +45,11 @@ public abstract class PipelineBuilderDNDHandler implements DndDragCancelHandler 
         for (App app : selected) {
             if (!app.getPipelineEligibility().isValid()) {
                 eventStatus.setStatus(false);
-                eventStatus.update(app.getPipelineEligibility().getReason());
+                eventStatus.update(SafeHtmlUtils.fromString(app.getPipelineEligibility().getReason()));
                 return;
             }
 
-            eventStatus.update(I18N.DISPLAY.appendAppToWorkflow(app.getName()));
+            eventStatus.update(SafeHtmlUtils.fromString(I18N.DISPLAY.appendAppToWorkflow(app.getName())));
         }
     }
 

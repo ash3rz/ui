@@ -30,6 +30,7 @@ import com.google.common.base.Strings;
 import com.google.gwt.editor.client.EditorError;
 import com.google.gwt.safehtml.shared.SafeHtml;
 import com.google.gwt.safehtml.shared.SafeHtmlBuilder;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.Command;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HTML;
@@ -366,21 +367,21 @@ public class PipelineViewPresenter implements Presenter, PipelineView.Presenter,
     @Override
     public void onInfoClick() {
         view.getStepPanel().setActiveWidget(view.getInfoPanel());
-        view.getHelpContainer().setHTML(I18N.DISPLAY.infoPnlTip());
+        view.getHelpContainer().setHTML(SafeHtmlUtils.fromString(I18N.DISPLAY.infoPnlTip()));
         updateErrors();
     }
 
     @Override
     public void onAppOrderClick() {
         view.getStepPanel().setActiveWidget(view.getAppOrderPanel());
-        view.getHelpContainer().setHTML(I18N.DISPLAY.selectOrderPnlTip());
+        view.getHelpContainer().setHTML(SafeHtmlUtils.fromString(I18N.DISPLAY.selectOrderPnlTip()));
         updateErrors();
     }
 
     @Override
     public void onMappingClick() {
         view.getStepPanel().setActiveWidget(view.getMappingPanel());
-        view.getHelpContainer().setHTML(I18N.DISPLAY.inputsOutputsPnlTip());
+        view.getHelpContainer().setHTML(SafeHtmlUtils.fromString(I18N.DISPLAY.inputsOutputsPnlTip()));
         updateErrors();
     }
 

@@ -11,6 +11,7 @@ import com.google.gwt.core.client.GWT;
 import com.google.gwt.editor.client.Editor;
 import com.google.gwt.editor.client.EditorError;
 import com.google.gwt.editor.client.SimpleBeanEditorDriver;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -134,7 +135,7 @@ public class PipelineViewImpl extends Composite implements PipelineView {
 
     @UiFactory
     public HtmlLayoutContainer buildHelpContainer() {
-        return new HtmlLayoutContainer(I18N.DISPLAY.infoPnlTip());
+        return new HtmlLayoutContainer(SafeHtmlUtils.fromString(I18N.DISPLAY.infoPnlTip()));
     }
 
     @Override

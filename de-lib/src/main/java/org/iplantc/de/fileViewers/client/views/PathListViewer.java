@@ -20,6 +20,7 @@ import com.google.common.collect.Lists;
 import com.google.common.collect.Sets;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.uibinder.client.UiHandler;
@@ -147,7 +148,7 @@ public class PathListViewer extends AbstractStructuredTextViewer implements Stor
                 InfoType infoType1 = InfoType.fromTypeString(dr.getInfoType());
                 if(InfoType.HT_ANALYSIS_PATH_LIST.equals(infoType1)){
                     cancellableEvent.setCancelled(true);
-                    statusProxy.update(appearance.preventPathListDrop());
+                    statusProxy.update(SafeHtmlUtils.fromString(appearance.preventPathListDrop()));
                     statusProxy.setStatus(false);
 
                     return;

@@ -9,6 +9,7 @@ import com.google.common.base.Joiner;
 import com.google.common.collect.Lists;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.Widget;
 
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent;
@@ -90,7 +91,7 @@ public class AppToOntologyHierarchyDND implements DndDragStartEvent.DndDragStart
             event.setCancelled(true);
         } else {
             event.setData(apps);
-            event.getStatusProxy().update(getAppLabels(apps));
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(getAppLabels(apps)));
             event.getStatusProxy().setStatus(true);
             event.setCancelled(false);
         }
@@ -139,7 +140,7 @@ public class AppToOntologyHierarchyDND implements DndDragStartEvent.DndDragStart
         // Verify we have drag data.
         if (apps == null || apps.size() == 0) {
             status.setStatus(false);
-            status.update("");
+            status.update(SafeHtmlUtils.fromString(""));
             return false;
         }
 
@@ -153,7 +154,7 @@ public class AppToOntologyHierarchyDND implements DndDragStartEvent.DndDragStart
 
         if (agaveApps.size() > 0) {
             status.setStatus(false);
-            status.update(appearance.externalAppDND(getAppLabels(agaveApps)));
+            status.update(SafeHtmlUtils.fromString(appearance.externalAppDND(getAppLabels(agaveApps))));
             return false;
         }
 
@@ -162,13 +163,13 @@ public class AppToOntologyHierarchyDND implements DndDragStartEvent.DndDragStart
         // Verify we have a drop target.
         if (targetHierarchy == null) {
             status.setStatus(false);
-            status.update(appList);
+            status.update(SafeHtmlUtils.fromString(appList));
             return false;
         }
 
         // Reset status message
         status.setStatus(true);
-        status.update(appList + " > " + targetHierarchy.getLabel());
+        status.update(SafeHtmlUtils.fromString(appList + " > " + targetHierarchy.getLabel()));
         return true;
     }
 

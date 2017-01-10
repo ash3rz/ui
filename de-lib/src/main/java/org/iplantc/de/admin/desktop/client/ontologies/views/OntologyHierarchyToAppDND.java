@@ -7,6 +7,7 @@ import org.iplantc.de.client.models.ontologies.OntologyHierarchy;
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.Widget;
 
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent;
@@ -80,7 +81,7 @@ public class OntologyHierarchyToAppDND implements DndDragStartEvent.DndDragStart
             event.setCancelled(true);
         } else {
             event.setData(hierarchy);
-            event.getStatusProxy().update(hierarchy.getLabel());
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(hierarchy.getLabel()));
             event.getStatusProxy().setStatus(true);
             event.setCancelled(false);
         }
@@ -123,27 +124,27 @@ public class OntologyHierarchyToAppDND implements DndDragStartEvent.DndDragStart
         // Verify we have drag data.
         if (hierarchy == null) {
             status.setStatus(false);
-            status.update("");
+            status.update(SafeHtmlUtils.fromString(""));
             return false;
         }
 
         // Verify we have a drop target.
         if (targetApp == null) {
             status.setStatus(false);
-            status.update("");
+            status.update(SafeHtmlUtils.fromString(""));
             return false;
         }
 
         // Verify the target is not an external app
         if (targetApp.getAppType().equalsIgnoreCase(App.EXTERNAL_APP)) {
             status.setStatus(false);
-            status.update(appearance.externalAppDND(targetApp.getName()));
+            status.update(SafeHtmlUtils.fromString(appearance.externalAppDND(targetApp.getName())));
             return false;
         }
 
         // Reset status message
         status.setStatus(true);
-        status.update(hierarchy.getLabel() + " > " + targetApp.getName());
+        status.update(SafeHtmlUtils.fromString(hierarchy.getLabel() + " > " + targetApp.getName()));
         return true;
     }
 }

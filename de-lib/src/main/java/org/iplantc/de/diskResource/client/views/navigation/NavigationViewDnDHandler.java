@@ -9,6 +9,7 @@ import org.iplantc.de.diskResource.client.NavigationView;
 import com.google.common.collect.Lists;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent;
 import com.sencha.gxt.dnd.core.client.DndDragMoveEvent;
@@ -56,7 +57,7 @@ public class NavigationViewDnDHandler implements DndDragStartEvent.DndDragStartH
             return;
         }
 
-        event.getStatusProxy().update(appearance.dataDragDropStatusText(dropData.size()));
+        event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dropData.size())));
     }
 
     @Override
@@ -84,7 +85,7 @@ public class NavigationViewDnDHandler implements DndDragStartEvent.DndDragStartH
                 && !dragData.isEmpty()
                 && (!containsFilteredItems(dragData))) {
             event.setData(dragData);
-            event.getStatusProxy().update(appearance.dataDragDropStatusText(dragData.size()));
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dragData.size())));
             event.getStatusProxy().setStatus(true);
             event.setCancelled(false);
         } else {
@@ -189,7 +190,7 @@ public class NavigationViewDnDHandler implements DndDragStartEvent.DndDragStartH
 
         // Reset status message
         status.setStatus(true);
-        status.update(appearance.dataDragDropStatusText(dropData.size()));
+        status.update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dropData.size())));
 
         // Verify we have a drop target.
         if (targetFolder == null) {
@@ -200,7 +201,7 @@ public class NavigationViewDnDHandler implements DndDragStartEvent.DndDragStartH
         // Check for permissions
         if (!(diskResourceUtil.isMovable(targetFolder, dropData))) {
             status.setStatus(false);
-            status.update(appearance.permissionErrorMessage());
+            status.update(SafeHtmlUtils.fromString(appearance.permissionErrorMessage()));
             return false;
         }
 

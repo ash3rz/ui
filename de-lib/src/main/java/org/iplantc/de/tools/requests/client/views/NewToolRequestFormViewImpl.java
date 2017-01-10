@@ -13,6 +13,7 @@ import org.iplantc.de.resources.client.messages.I18N;
 
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -142,7 +143,7 @@ public final class NewToolRequestFormViewImpl extends Composite implements NewTo
     
     @UiFactory
     HtmlLayoutContainer buildIntroContainer() {
-        return new HtmlLayoutContainer(I18N.DISPLAY.toolRequestFormIntro());
+        return new HtmlLayoutContainer(SafeHtmlUtils.fromString(I18N.DISPLAY.toolRequestFormIntro()));
     }
 
     private void initRequiredLabels() {

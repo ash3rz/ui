@@ -24,6 +24,7 @@ import com.google.gwt.event.dom.client.MouseDownHandler;
 import com.google.gwt.event.dom.client.MouseUpEvent;
 import com.google.gwt.event.dom.client.MouseUpHandler;
 import com.google.gwt.safehtml.shared.SafeHtml;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -209,12 +210,12 @@ public class AppIntegrationPalette extends Composite {
             public void onDragStart(DndDragStartEvent event) {
                 if (onlyLabelEditMode && !type.equals(ArgumentType.Info)) {
                     event.getStatusProxy().setStatus(false);
-                    event.getStatusProxy().update("This item cannot be added to a published app.");
+                    event.getStatusProxy().update(SafeHtmlUtils.fromString("This item cannot be added to a published app."));
                     return;
                 }
 
                 event.getStatusProxy().setStatus(true);
-                event.getStatusProxy().update(widget.getElement().getString());
+                event.getStatusProxy().update(SafeHtmlUtils.fromString(widget.getElement().getString()));
                 event.setData(createNewArgument(type));
             }
         });
@@ -243,12 +244,12 @@ public class AppIntegrationPalette extends Composite {
             public void onDragStart(DndDragStartEvent event) {
                 if (onlyLabelEditMode) {
                     event.getStatusProxy().setStatus(false);
-                    event.getStatusProxy().update("Groups cannot be added to a published app.");
+                    event.getStatusProxy().update(SafeHtmlUtils.fromString("Groups cannot be added to a published app."));
                     return;
                 }
 
                 event.getStatusProxy().setStatus(true);
-                event.getStatusProxy().update(group.getElement().getString());
+                event.getStatusProxy().update(SafeHtmlUtils.fromString(group.getElement().getString()));
                 event.setData(createNewArgumentGroup());
 
             }

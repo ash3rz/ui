@@ -22,6 +22,7 @@ import com.google.gwt.event.logical.shared.SelectionEvent;
 import com.google.gwt.event.logical.shared.SelectionHandler;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
 import com.google.gwt.event.logical.shared.ValueChangeHandler;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -145,7 +146,7 @@ public class SubmitAppForPublicUseViewImpl implements SubmitAppForPublicUseView 
 
     @UiFactory
     HtmlLayoutContainer buildIntroContainer() {
-        return new HtmlLayoutContainer(appearance.submitForPublicUseIntro());
+        return new HtmlLayoutContainer(SafeHtmlUtils.fromString(appearance.submitForPublicUseIntro()));
     }
 
     @Override

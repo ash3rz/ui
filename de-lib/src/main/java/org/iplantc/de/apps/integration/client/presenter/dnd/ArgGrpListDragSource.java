@@ -7,6 +7,7 @@ import org.iplantc.de.client.models.apps.integration.ArgumentGroup;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.editor.client.adapters.ListEditor;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.IsWidget;
 
 import com.sencha.gxt.dnd.core.client.DndDragCancelEvent;
@@ -83,7 +84,7 @@ public final class ArgGrpListDragSource extends DragSource {
         List<AppTemplateForm.ArgumentGroupEditor> editors = listEditor.getEditors();
         boolean contains = editors.contains(findWidget);
         if ((findWidget != null) && contains && ((ContentPanel)findWidget.asWidget()).getHeader().getElement().isOrHasChild(as) && !hasLabelOnlyEditMode.isLabelOnlyEditMode()) {
-            event.getStatusProxy().update(((ContentPanel)findWidget.asWidget()).getHeader().getElement().getString());
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(((ContentPanel)findWidget.asWidget()).getHeader().getElement().getString()));
             event.setCancelled(false);
 
             dragArgGrpIndex = editors.indexOf(findWidget);
@@ -96,7 +97,7 @@ public final class ArgGrpListDragSource extends DragSource {
             dragArgGrpIndex = -1;
             dragArgGrp = null;
             event.setCancelled(true);
-            event.getStatusProxy().update("");
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(""));
         }
     }
 

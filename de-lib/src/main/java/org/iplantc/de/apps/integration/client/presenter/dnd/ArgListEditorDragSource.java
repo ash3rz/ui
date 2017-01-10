@@ -10,6 +10,7 @@ import com.google.common.base.Strings;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.editor.client.adapters.ListEditor;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.ui.IsWidget;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -104,7 +105,7 @@ public final class ArgListEditorDragSource extends DragSource {
                     Argument argument = listEditor.getList().get(dragArgumentIndex);
                     // Only allow drag if it's not the empty grp argument
                     if (Strings.isNullOrEmpty(argument.getId()) || !argument.getId().equalsIgnoreCase(AppTemplateUtils.EMPTY_GROUP_ARG_ID)) {
-                        event.getStatusProxy().update(findWidget.asWidget().getElement().getString());
+                        event.getStatusProxy().update(SafeHtmlUtils.fromString(findWidget.asWidget().getElement().getString()));
                         event.setCancelled(false);
                         
                         // JDS For now, let's remove on drag start
@@ -127,7 +128,7 @@ public final class ArgListEditorDragSource extends DragSource {
         dragArgumentIndex = -1;
         dragArgument = null;
         event.setCancelled(true);
-        event.getStatusProxy().update("");
+        event.getStatusProxy().update(SafeHtmlUtils.fromString(""));
     }
 
     private void removePlaceholderArgument() {

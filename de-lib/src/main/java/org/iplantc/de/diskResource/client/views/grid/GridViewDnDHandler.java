@@ -9,6 +9,7 @@ import org.iplantc.de.diskResource.client.GridView;
 import com.google.common.collect.Lists;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent;
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent.DndDragEnterHandler;
@@ -64,9 +65,9 @@ class GridViewDnDHandler implements DndDragStartHandler,
         }
 
         if (isSelectAllChecked()) {
-            event.getStatusProxy().update(appearance.dataDragDropStatusText(getTotalSelectionCount()));
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(getTotalSelectionCount())));
         } else {
-            event.getStatusProxy().update(appearance.dataDragDropStatusText(dropData.size()));
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dropData.size())));
         }
     }
 
@@ -98,9 +99,9 @@ class GridViewDnDHandler implements DndDragStartHandler,
         } else {
             event.setData(dragData);
             if (isSelectAllChecked()) {
-                event.getStatusProxy().update(appearance.dataDragDropStatusText(getTotalSelectionCount()));
+                event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(getTotalSelectionCount())));
             } else {
-                event.getStatusProxy().update(appearance.dataDragDropStatusText(dragData.size()));
+                event.getStatusProxy().update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dragData.size())));
             }
             event.getStatusProxy().setStatus(true);
             event.setCancelled(false);
@@ -239,9 +240,9 @@ class GridViewDnDHandler implements DndDragStartHandler,
         // Reset status message
         status.setStatus(true);
         if (isSelectAllChecked()) {
-            status.update(appearance.dataDragDropStatusText(getTotalSelectionCount()));
+            status.update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(getTotalSelectionCount())));
         } else {
-            status.update(appearance.dataDragDropStatusText(dropData.size()));
+            status.update(SafeHtmlUtils.fromString(appearance.dataDragDropStatusText(dropData.size())));
         }
 
         // Verify we have a drop target.
@@ -253,7 +254,7 @@ class GridViewDnDHandler implements DndDragStartHandler,
         // Check for permissions
         if (!(diskResourceUtil.isMovable(targetFolder, dropData))) {
             status.setStatus(false);
-            status.update(appearance.permissionErrorMessage());
+            status.update(SafeHtmlUtils.fromString(appearance.permissionErrorMessage()));
             return false;
         }
 

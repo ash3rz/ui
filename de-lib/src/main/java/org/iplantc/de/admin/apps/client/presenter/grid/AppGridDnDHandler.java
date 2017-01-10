@@ -6,6 +6,7 @@ import org.iplantc.de.client.models.apps.AppCategory;
 
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.dom.client.EventTarget;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent;
 import com.sencha.gxt.dnd.core.client.DndDragEnterEvent.DndDragEnterHandler;
@@ -76,7 +77,7 @@ public class AppGridDnDHandler implements DndDragStartHandler,
             }
 
             event.setData(dragData);
-            event.getStatusProxy().update(dragDataLabel);
+            event.getStatusProxy().update(SafeHtmlUtils.fromString(dragDataLabel));
             event.getStatusProxy().setStatus(true);
             event.setCancelled(false);
         } else {
