@@ -36,7 +36,7 @@ public class IplantErrorDialog extends AlertMessageBox {
         maxHeight = appearance.maxHeight();
 
         if(details != null)  {
-            contentAppearance.getContentElement(getElement()).setInnerSafeHtml(appearance.details(details));
+            getMessageBoxAppearance().getContentElement(getElement()).setInnerSafeHtml(appearance.details(details));
         }
 
         getElement().getStyle().setProperty("maxHeight", String.valueOf(maxHeight));

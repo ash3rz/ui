@@ -110,7 +110,7 @@ public class IPCFileUploadField extends Component implements IsField<String>, Ha
         DivElement wrapper = Document.get().createDivElement();
         wrapper.addClassName(appearance.buttonClass());
         XElement buttonElement = button.getElement();
-        if (GXT.isIE6() || GXT.isIE7() || GXT.isIE8() || GXT.isOpera()) {
+        if (GXT.isIE8()) {
             buttonElement.removeClassName(CommonStyles.get().inlineBlock());
         }
 

@@ -179,12 +179,12 @@ public class SelectionItemPropertyEditor extends Composite implements HasValueCh
                   ToolTipConfig config = new ToolTipConfig();
                   config.setAutoHide(false);
                   config.setAnchor(Side.RIGHT);
-                  config.setTitleHtml(getMessages().errorTipTitleText());
+                  config.setTitle(getMessages().errorTipTitleText());
                   tooltip = new ToolTip(toolTipAlignWidget, config);
                   tooltip.setMaxWidth(600);
                 }
                 ToolTipConfig config = tooltip.getToolTipConfig();
-                config.setBodyHtml(msg);
+                config.setBody(msg);
                 tooltip.update(config);
                 tooltip.enable();
                 if (!tooltip.isAttached()) {

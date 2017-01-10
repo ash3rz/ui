@@ -28,7 +28,7 @@ public class IPlantSideErrorHandler extends SideErrorHandler implements ResizeHa
         if (!isShowing()) {
             return;
         }
-        alignErrorIcon();
+        adjustSize();
     }
 
     public boolean isShowing() {

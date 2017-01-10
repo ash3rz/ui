@@ -6,6 +6,7 @@ import com.google.gwt.dom.client.EventTarget;
 import com.google.gwt.event.dom.client.MouseMoveEvent;
 import com.google.gwt.event.dom.client.MouseOutEvent;
 import com.google.gwt.event.dom.client.MouseOverEvent;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.user.client.Event;
 import com.google.gwt.user.client.ui.Widget;
 
@@ -56,11 +57,11 @@ public class AppWizardQuickTip extends ToolTip {
     }
 
     @Override
-    protected void delayHide() {
+    public void delayHide() {
         if (!isAttached()) {
             targetElem = null;
-            bodyHtml = null;
-            titleHtml = null;
+            body = null;
+            title = null;
         }
         super.delayHide();
     }
@@ -69,8 +70,8 @@ public class AppWizardQuickTip extends ToolTip {
     protected void onHide() {
         super.onHide();
         targetElem = null;
-        bodyHtml = null;
-        titleHtml = null;
+        body = null;
+        title = null;
     }
 
     @Override
@@ -150,8 +151,8 @@ public class AppWizardQuickTip extends ToolTip {
 
     private void updateTargetElement(Element target) {
         targetElem = target;
-        bodyHtml = getAttributeValue(target, interceptTitles ? "title" : "qtip");
-        titleHtml = interceptTitles ? null : getAttributeValue(target, "qtitle");
+        body = SafeHtmlUtils.fromString(getAttributeValue(target, interceptTitles ? "title" : "qtip"));
+        title = interceptTitles ? null : SafeHtmlUtils.fromString(getAttributeValue(target, "qtitle"));
 
         String width = getAttributeValue(target, "qwidth");
         if (width != null && !"".equals(width)) {

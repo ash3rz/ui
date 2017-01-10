@@ -150,7 +150,7 @@ public class IplantBaseWindowAppearance implements IplantWindowBase.IplantWindow
     @Override
     public void setHeaderStyle(Header header) {
         header.setIcon(resources.headerIcon());
-        header.getAppearance().getTextElem(header.getElement()).addClassName(resources.css().headerText());
+        header.getAppearance().getHeadingElem(header.getElement()).addClassName(resources.css().headerText());
     }
 
     @Override

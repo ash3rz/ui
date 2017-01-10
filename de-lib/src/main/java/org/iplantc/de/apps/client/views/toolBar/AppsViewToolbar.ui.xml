@@ -22,7 +22,7 @@
 
 	<ui:with field="submitToolTip"
 		type="com.sencha.gxt.widget.core.client.tips.ToolTipConfig">
-		<ui:attributes titleText="{appearance.submitForPublicUse}"
+		<ui:attributes title="{appearance.submitForPublicUse}"
 			trackMouse="true" />
 	</ui:with>
 
