@@ -68,7 +68,7 @@ public class ShareAnonymousCallback extends DataCallback<String> {
     private void showShareLink(String linkId) {
         // Open dialog window with text selected.
         IPlantDialog dlg = new IPlantDialog();
-        dlg.setHeadingText(appearance.sendToEnsemblMenuItem());
+        dlg.setHeading(appearance.sendToEnsemblMenuItem());
         dlg.setHideOnButtonClick(true);
         dlg.setResizable(false);
         dlg.setSize("535", "175");

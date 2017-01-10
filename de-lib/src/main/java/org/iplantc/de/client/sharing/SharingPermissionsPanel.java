@@ -212,7 +212,7 @@ public class SharingPermissionsPanel implements IsWidget {
                 }
 
                 ShareBreakDownDialog explainDlg = new ShareBreakDownDialog(shares);
-                explainDlg.setHeadingText(appearance.whoHasAccess());
+                explainDlg.setHeading(appearance.whoHasAccess());
                 explainDlg.show();
             }
         });

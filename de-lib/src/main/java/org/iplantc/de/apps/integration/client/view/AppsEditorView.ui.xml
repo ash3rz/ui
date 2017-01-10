@@ -70,7 +70,7 @@
         
         <!-- Palette -->
         <con:west layoutData="{westData}">
-            <gxt:ContentPanel ui:field="palettePanel" headingText="{appIntStrings.paletteHeader}">
+            <gxt:ContentPanel ui:field="palettePanel" heading="{appIntStrings.paletteHeader}">
                 <gxt:tool>
                     <button:ToolButton ui:field="paletteContextualHelpBtn"/>
                 </gxt:tool>
@@ -98,7 +98,7 @@
         
         <!-- Command Line Preview -->
         <con:south layoutData="{southData}">
-            <gxt:ContentPanel headingText="{appIntStrings.cmdLinePreviewHeader}">
+            <gxt:ContentPanel heading="{appIntStrings.cmdLinePreviewHeader}">
             	<form:TextArea ui:field="cmdLinePreview"
             				   readOnly="true"/>
             </gxt:ContentPanel>

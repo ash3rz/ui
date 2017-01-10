@@ -159,6 +159,6 @@ public class LaunchAnalysisViewImpl implements LaunchAnalysisView {
             headerLabel.appendHtmlConstant(appearance.getErrorIconImg().getString());
         }
         headerLabel.appendEscaped(appWidgetStrings.launchAnalysisDetailsHeadingPrefix() + appName);
-        contentPanel.setHeadingHtml(headerLabel.toSafeHtml());
+        contentPanel.setHeading(headerLabel.toSafeHtml());
     }
 }

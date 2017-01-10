@@ -118,7 +118,7 @@ public class AppLaunchViewImpl extends Composite implements AppLaunchView {
     private void showWaitTimeNotice(final AppTemplate cleaned, final JobExecution je) {
             Dialog id = new Dialog();
             id.setHideOnButtonClick(true);
-            id.setHeadingText(appearance.waitTimes());
+            id.setHeading(appearance.waitTimes());
             HTML htm = new HTML();
             htm.setHTML(appearance.hpcAppWaitTimes());
             id.add(htm);

@@ -60,13 +60,13 @@ public class ErrorDialog extends IPlantDialog {
                        final ErrorDialogAppearance appearance) {
         this.appearance = appearance;
 
-        setHeadingText(appearance.errorHeading());
+        setHeading(appearance.errorHeading());
         this.setMinHeight(appearance.minHeight());
         this.setMinWidth(appearance.minWidth());
         this.setResizable(false);
 
         add(uiBinder.createAndBindUi(this));
-        detailsPanel.setHeadingText(appearance.detailsHeading());
+        detailsPanel.setHeading(appearance.detailsHeading());
         detailsPanel.setSize(appearance.detailsPanelWidth(), appearance.detailsPanelHeight());
 
         if (errorMsg != null) {

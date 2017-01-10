@@ -27,7 +27,7 @@ public class RenameFolderDialog extends IPlantPromptDialog {
                               final DiskResourceView.Presenter.Appearance displayStrings) {
         super(displayStrings.folderName(), -1, folder.getName(), new DiskResourceNameValidator());
 
-        setHeadingText(displayStrings.rename());
+        setHeading(displayStrings.rename());
         addValidator(new DiskResourceSameNameValidator(folder));
 
         addOkButtonSelectHandler(new SelectHandler() {

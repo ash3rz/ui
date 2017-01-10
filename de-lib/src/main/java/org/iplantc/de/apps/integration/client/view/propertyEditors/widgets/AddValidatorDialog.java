@@ -188,7 +188,7 @@ class AddValidatorDialog extends IPlantDialog implements ValidHandler, InvalidHa
             ArgumentValidatorMessages avMessages) {
         this.avMessages = avMessages;
 
-        setHeadingText(avMessages.validatorDialogHeading());
+        setHeading(avMessages.validatorDialogHeading());
         setAutoHide(false);
         setSize("400", "250");
         // Initialize the ComboBox list store with the given Set<..>

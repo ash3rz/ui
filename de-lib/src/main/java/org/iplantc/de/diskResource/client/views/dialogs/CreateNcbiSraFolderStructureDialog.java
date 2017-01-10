@@ -48,7 +48,7 @@ public class CreateNcbiSraFolderStructureDialog extends IPlantDialog {
     public CreateNcbiSraFolderStructureDialog(final Folder parentFolder, final Appearance appearance) {
         this.appearance = appearance;
         setWidth(appearance.dialogWidth());
-        setHeadingText(appearance.ncbiSraProject());
+        setHeading(appearance.ncbiSraProject());
         initFields();
         initDestPathLabel(parentFolder.getPath());
         build(parentFolder.getPath());

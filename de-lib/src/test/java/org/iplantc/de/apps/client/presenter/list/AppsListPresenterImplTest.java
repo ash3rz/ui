@@ -228,8 +228,8 @@ public class AppsListPresenterImplTest {
         appListCallbackCaptor.getValue().onFailure(500, throwableMock);
 
         verify(listStoreMock).clear();
-        verify(gridViewMock).setHeadingText(eq(appearanceMock.appLoadError()));
-        verify(tileViewMock).setHeadingText(eq(appearanceMock.appLoadError()));
+        verify(gridViewMock).setHeading(eq(appearanceMock.appLoadError()));
+        verify(tileViewMock).setHeading(eq(appearanceMock.appLoadError()));
         verify(activeViewMock).unmask();
 
         verifyNoMoreInteractions(appServiceMock);

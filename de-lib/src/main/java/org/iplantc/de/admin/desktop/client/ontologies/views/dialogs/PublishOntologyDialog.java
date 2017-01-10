@@ -35,7 +35,7 @@ public class PublishOntologyDialog extends IPlantDialog implements IsHideable {
         this.handlers = handlers;
 
         setHideOnButtonClick(false);
-        setHeadingText(appearance.publishOntology());
+        setHeading(appearance.publishOntology());
         setResizable(true);
         setPixelSize(appearance.publishDialogWidth(), appearance.publishDialogHeight());
         setMinHeight(appearance.publishDialogMinHeight());

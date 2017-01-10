@@ -159,7 +159,7 @@ public class TextSelectionPropertyEditor extends AbstractArgumentPropertyEditor 
 
         IPlantDialog dlg = new IPlantDialog();
         dlg.setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
-        dlg.setHeadingText(appearance.getPropertyPanelLabels().singleSelectionCreateLabel());
+        dlg.setHeading(appearance.getPropertyPanelLabels().singleSelectionCreateLabel());
         dlg.setModal(true);
         dlg.setOkButtonText(I18N.DISPLAY.done());
         dlg.setAutoHide(false);

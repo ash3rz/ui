@@ -265,7 +265,7 @@ public class MetadataTemplatesPresenterImpl implements TemplateListingView.Prese
 
     private IPlantDialog createEditDialog() {
         final IPlantDialog d = new IPlantDialog();
-        d.setHeadingText(appearance.templateAttributeEditorHeading());
+        d.setHeading(appearance.templateAttributeEditorHeading());
         editView.reset();
         d.add(editView.asWidget());
         d.setSize("800px", "600px");

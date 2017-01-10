@@ -52,7 +52,7 @@ public class AboutApplicationWindow extends IplantWindowBase {
         this.aboutApplicationService = aboutApplicationService;
         this.appearance = appearance;
         setSize("320", "260");
-        setHeadingText(appearance.headingText());
+        setHeading(appearance.headingText());
         ensureDebugId(DeModule.WindowIds.ABOUT_WINDOW);
         executeServiceCall();
     }

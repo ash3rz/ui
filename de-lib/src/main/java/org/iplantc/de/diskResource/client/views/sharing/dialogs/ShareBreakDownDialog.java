@@ -60,7 +60,7 @@ public class ShareBreakDownDialog extends Dialog {
         setPixelSize(appearance.shareBreakDownDlgWidth(), appearance.shareBreakDownDlgHeight());
         setHideOnButtonClick(true);
         setModal(true);
-        setHeadingText(appearance.whoHasAccess());
+        setHeading(appearance.whoHasAccess());
         buildGrid();
     }
 

@@ -22,7 +22,7 @@
         <con:child layoutData="{layoutData}">
             <con:HtmlLayoutContainer ui:field="intro"></con:HtmlLayoutContainer>
         </con:child>
-        <form:FieldSet headingText="{strings.toolTab}"
+        <form:FieldSet heading="{strings.toolTab}"
                        collapsible="true">
             <con:VerticalLayoutContainer>
                 <con:child layoutData="{layoutData}">
@@ -128,7 +128,7 @@
                 </con:child>
             </con:VerticalLayoutContainer>
         </form:FieldSet>
-        <form:FieldSet headingText="{strings.otherTab}"
+        <form:FieldSet heading="{strings.otherTab}"
                        collapsible="true">
             <con:VerticalLayoutContainer>
                 <con:child layoutData="{layoutData}">

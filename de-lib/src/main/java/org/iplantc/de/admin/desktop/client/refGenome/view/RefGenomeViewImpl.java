@@ -115,7 +115,7 @@ public class RefGenomeViewImpl extends Composite implements RefGenomeView {
     void addButtonClicked(SelectEvent event) {
         final IPlantDialog iDlg = new IPlantDialog();
         iDlg.setHideOnButtonClick(false);
-        iDlg.setHeadingText(appearance.addReferenceGenomeDialogHeading());
+        iDlg.setHeading(appearance.addReferenceGenomeDialogHeading());
         iDlg.getOkButton().setText(appearance.saveBtnText());
         final EditReferenceGenomeDialog addRefGenomePanel = EditReferenceGenomeDialog.addNewReferenceGenome();
         iDlg.add(addRefGenomePanel);
@@ -149,7 +149,7 @@ public class RefGenomeViewImpl extends Composite implements RefGenomeView {
     public void editReferenceGenome(ReferenceGenome refGenome) {
         final IPlantDialog iDlg = new IPlantDialog();
         iDlg.setHideOnButtonClick(false);
-        iDlg.setHeadingText(appearance.editReferenceGenomeDialogHeading(refGenome.getName()));
+        iDlg.setHeading(appearance.editReferenceGenomeDialogHeading(refGenome.getName()));
         iDlg.getOkButton().setText(appearance.saveBtnText());
         final EditReferenceGenomeDialog addRefGenomePanel = EditReferenceGenomeDialog.editReferenceGenome(refGenome);
         iDlg.add(addRefGenomePanel);

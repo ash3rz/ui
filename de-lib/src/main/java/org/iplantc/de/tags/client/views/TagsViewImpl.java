@@ -159,7 +159,7 @@ public class TagsViewImpl extends Composite implements TagsView,
             }
         });
         pop.setSize("300", "250");
-        pop.setHeadingText("Edit Tag Description for " + tag.getValue());
+        pop.setHeading("Edit Tag Description for " + tag.getValue());
         pop.setWidget(tb);
         pop.show();
     }

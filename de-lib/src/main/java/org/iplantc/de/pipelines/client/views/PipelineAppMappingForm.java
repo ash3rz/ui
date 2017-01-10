@@ -348,7 +348,7 @@ public class PipelineAppMappingForm implements PipelineAppMappingView {
 
         private void init() {
             String stepLabel = I18N.DISPLAY.stepWithValue(app.getStep()+1);
-            setHeadingText(Format.substitute("{0}: {1}", stepLabel, app.getName())); //$NON-NLS-1$
+            setHeading(Format.substitute("{0}: {1}", stepLabel, app.getName())); //$NON-NLS-1$
             setCollapsible(true);
             setWidth(400);
         }

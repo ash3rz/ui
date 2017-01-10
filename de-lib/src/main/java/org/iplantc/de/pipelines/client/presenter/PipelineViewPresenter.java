@@ -231,7 +231,7 @@ public class PipelineViewPresenter implements Presenter, PipelineView.Presenter,
 
         Dialog d = new Dialog();
         d.setModal(true);
-        d.setHeadingText(I18N.DISPLAY.error());
+        d.setHeading(I18N.DISPLAY.error());
         VerticalLayoutContainer vlc = new VerticalLayoutContainer();
 
         d.setWidget(vlc);

@@ -17,6 +17,7 @@ import com.google.common.base.Joiner;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.dom.client.Element;
 import com.google.gwt.event.shared.HandlerRegistration;
+import com.google.gwt.safehtml.shared.SafeHtmlUtils;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiFactory;
 import com.google.gwt.uibinder.client.UiField;
@@ -88,17 +89,17 @@ public class AdminAppsGridImpl extends ContentPanel implements AdminAppsGridView
     @Override
     public void onAppCategorySelectionChanged(AppCategorySelectionChangedEvent event) {
         // FIXME Move to appearance
-        setHeadingText(Joiner.on(" >> ").join(event.getGroupHierarchy()));
+        setHeading(Joiner.on(" >> ").join(event.getGroupHierarchy()));
     }
 
     @Override
     public void onHierarchySelected(HierarchySelectedEvent event) {
-        setHeadingText(Joiner.on(" >> ").join(event.getPath()));
+        setHeading(Joiner.on(" >> ").join(event.getPath()));
     }
 
     @Override
     public void onPreviewHierarchySelected(PreviewHierarchySelectedEvent event) {
-        setHeadingText(Joiner.on(" >> ").join(event.getPath()));
+        setHeading(Joiner.on(" >> ").join(event.getPath()));
     }
 
     @Override
@@ -108,7 +109,7 @@ public class AdminAppsGridImpl extends ContentPanel implements AdminAppsGridView
 //        acm.setSearchRegexPattern(searchRegexPattern);
 
         int total = event.getResults() == null ? 0 : event.getResults().size();
-        setHeadingText(appearance.searchAppResultsHeader(event.getSearchText(), total));
+        setHeading(appearance.searchAppResultsHeader(event.getSearchText(), total));
     }
 
     @Override
@@ -169,6 +170,6 @@ public class AdminAppsGridImpl extends ContentPanel implements AdminAppsGridView
 
     @Override
     public void onSelectOntologyVersion(SelectOntologyVersionEvent event) {
-        setHeadingHtml("&nbsp;");
+        setHeading(SafeHtmlUtils.fromSafeConstant("&nbsp;"));
     }
 }

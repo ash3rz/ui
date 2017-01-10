@@ -32,7 +32,7 @@ public class MyAnalysesWindow extends IplantWindowBase {
         this.presenter = presenter;
 
         ensureDebugId(DeModule.WindowIds.ANALYSES_WINDOW);
-        setHeadingText(displayStrings.analyses());
+        setHeading(displayStrings.analyses());
         setSize("670", "375");
         setMinWidth(400);
     }

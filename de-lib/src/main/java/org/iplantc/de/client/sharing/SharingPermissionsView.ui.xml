@@ -22,7 +22,7 @@
             <gxt:FramedPanel ui:field="permPanel"
                              collapsible="false"
                              headerVisible="true"
-                             headingText="{appearance.whoHasAccess}"
+                             heading="{appearance.whoHasAccess}"
                              height="200px">
                 <grid:Grid ui:field="grid"
                            cm="{cm}"

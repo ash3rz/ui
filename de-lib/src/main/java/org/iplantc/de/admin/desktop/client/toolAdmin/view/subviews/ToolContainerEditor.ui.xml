@@ -32,7 +32,7 @@
         </container:child>
         <container:child layoutData="{layoutDataPadded}">
             <form:FieldSet ui:field="containerFieldSet"
-                           headingText="{appearance.containerDetailsFieldSetLabel}"
+                           heading="{appearance.containerDetailsFieldSetLabel}"
                            collapsible="true">
                 <container:VerticalLayoutContainer>
                     <container:child layoutData="{layoutData}">

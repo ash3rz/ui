@@ -26,7 +26,7 @@ public class AnalysisCommentsDialog extends IPlantDialog {
         this.analysis = analysis;
 
         String comments = analysis.getComments();
-        setHeadingText(appearance.comments());
+        setHeading(appearance.comments());
         setSize("350px", "300px");
         ta = new TextArea();
         ta.setValue(comments);

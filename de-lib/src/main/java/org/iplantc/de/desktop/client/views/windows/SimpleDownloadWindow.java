@@ -35,7 +35,7 @@ public class SimpleDownloadWindow extends IplantWindowBase {
         this.displayStrings = displayStrings;
         this.diskResourceServiceFacade = diskResourceServiceFacade;
 
-        setHeadingText(displayStrings.download());
+        setHeading(displayStrings.download());
         setSize("320", "320");
         ensureDebugId(DeModule.WindowIds.SIMPLE_DOWNLOAD);
     }

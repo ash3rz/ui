@@ -85,7 +85,7 @@
                                     height="30"
                                     layoutData="{stepActionData}" />
                                 <gxt:ContentPanel
-                                    headingText="{strings.quickTipsHeading}"
+                                    heading="{strings.quickTipsHeading}"
                                     width="150"
                                     height="150"
                                     collapsible="true"

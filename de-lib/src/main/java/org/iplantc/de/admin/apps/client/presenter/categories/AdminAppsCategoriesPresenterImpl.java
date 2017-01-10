@@ -224,7 +224,7 @@ public class AdminAppsCategoriesPresenterImpl implements AdminCategoriesView.Pre
             }
         });
 
-        dlg.setHeadingText(appearance.moveCategory());
+        dlg.setHeading(appearance.moveCategory());
         dlg.setResizable(true);
         dlg.setOkButtonText(appearance.submit());
         dlg.add(cat_view.asWidget());
@@ -478,7 +478,7 @@ public class AdminAppsCategoriesPresenterImpl implements AdminCategoriesView.Pre
             }
         });
 
-        dlg.setHeadingText(appearance.selectCategories(selectedApp.getName()));
+        dlg.setHeading(appearance.selectCategories(selectedApp.getName()));
         dlg.setResizable(true);
         dlg.setOkButtonText(appearance.submit());
 

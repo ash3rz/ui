@@ -165,7 +165,7 @@ public class AppsEditorViewImpl extends Composite implements AppsEditorView {
         this.palette = palette;
         style.ensureInjected();
         defaultDetailsPanel = new ContentPanel(new AppTemplateWizardPropertyContentPanelAppearance());
-        defaultDetailsPanel.setHeadingHtml(I18N.APPS_LABELS.detailsPanelHeader("")); //$NON-NLS-1$
+        defaultDetailsPanel.setHeading(I18N.APPS_LABELS.detailsPanelHeader("")); //$NON-NLS-1$
         defaultDetailsPanel.add(new HTML(I18N.APPS_LABELS.detailsPanelDefaultText()));
 
         initWidget(BINDER.createAndBindUi(this));

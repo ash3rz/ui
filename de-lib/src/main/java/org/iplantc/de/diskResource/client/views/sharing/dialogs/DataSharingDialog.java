@@ -59,7 +59,7 @@ public class DataSharingDialog extends IPlantDialog implements SelectHandler {
         setModal(true);
         setResizable(false);
         addHelp(new HTML(appearance.sharePermissionsHelp()));
-        setHeadingText(appearance.manageSharing());
+        setHeading(appearance.manageSharing());
         setOkButtonText(appearance.done());
         addOkButtonSelectHandler(this);
 

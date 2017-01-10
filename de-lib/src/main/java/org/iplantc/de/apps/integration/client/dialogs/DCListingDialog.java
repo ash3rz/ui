@@ -57,7 +57,7 @@ public class DCListingDialog extends IPlantDialog {
         setPixelSize(600, 500);
         setResizable(false);
         setModal(true);
-        setHeadingText("Installed Tools");
+        setHeading("Installed Tools");
         setHideOnButtonClick(false);
         getOkButton().setEnabled(false);
         getButton(PredefinedButton.CANCEL).addSelectHandler(new SelectHandler() {

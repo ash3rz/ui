@@ -740,7 +740,7 @@ public class GridViewPresenterImpl implements
                });
                view.setModal(false);
                view.setSize("400px", "400px");
-               view.setHeadingText(appearance.selectTemplate());
+               view.setHeading(appearance.selectTemplate());
                view.show();
            }
        });

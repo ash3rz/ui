@@ -69,7 +69,7 @@ public class MetadataDialog extends IPlantDialog {
         meta_pre = new MetadataPresenterImpl(selectedFolder, metadataView, drsvc);
         meta_pre.go(this);
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
-        setHeadingHtml("Metadata");
+        setHeading("Metadata");
         setSize("600px", "400px");
         getButton(PredefinedButton.OK).addSelectHandler(new OkSelectHandler());
         getButton(PredefinedButton.CANCEL).addSelectHandler(new CancelSelectHandler());

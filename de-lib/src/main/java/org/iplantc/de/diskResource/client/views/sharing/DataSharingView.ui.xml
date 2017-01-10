@@ -24,7 +24,7 @@
             <gxt:FramedPanel ui:field="diskResourceListPnl"
                              collapsible="false"
                              headerVisible="true"
-                             headingText="{appearance.selectFilesFolders}"
+                             heading="{appearance.selectFilesFolders}"
                              height="200px">
                 <grid:Grid ui:field="diskResourcesGrid"
                            cm="{diskResourcesColumnModel}"

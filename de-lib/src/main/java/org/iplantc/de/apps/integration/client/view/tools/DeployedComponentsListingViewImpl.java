@@ -190,7 +190,7 @@ public class DeployedComponentsListingViewImpl extends Composite implements
         d.getButtonBar().clear();
         d.setModal(true);
         d.setSize("500px", "300px");
-        d.setHeadingText(heading);
+        d.setHeading(heading);
         return d;
     }
 

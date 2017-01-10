@@ -27,7 +27,7 @@ public class AnalysisParametersDialog extends IPlantDialog {
     }
 
     public void show(final Analysis analysis){
-        setHeadingText(appearance.viewParameters(analysis.getName()));
+        setHeading(appearance.viewParameters(analysis.getName()));
 
         AnalysisParametersView view = presenter.getView();
         add(view);

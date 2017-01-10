@@ -50,7 +50,7 @@ public class AppSharingDialog extends IPlantDialog implements SelectHandler {
         TODO: Add contextual help
         addHelp(new HTML(appearance.sharePermissionsHelp()));
         */
-        setHeadingText("Manage Sharing");
+        setHeading("Manage Sharing");
         setOkButtonText("Done");
         addOkButtonSelectHandler(this);
     }

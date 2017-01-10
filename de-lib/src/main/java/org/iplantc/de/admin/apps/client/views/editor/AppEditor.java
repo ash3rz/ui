@@ -162,7 +162,7 @@ public class AppEditor extends Window implements Editor<App>, IsWidget, SaveAppS
         wikiUrl.addValidator(new UrlValidator());
         wikiUrlFieldLabel.setHTML(appearance.wikiUrlFieldLabel());
         appDocLbl.setHTML(appearance.appDocumentationLabel());
-        window.setHeadingText(app.getName());
+        window.setHeading(app.getName());
         docHelp.setHTML(appearance.docHelpHtml());
         disabled.setText(appearance.appDisabled());
         if (this.doc != null) {

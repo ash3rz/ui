@@ -52,7 +52,7 @@ public class TabFileConfigDialog extends Dialog {
 
     private void initWidget() {
         this.widget = uiBinder.createAndBindUi(this);
-        setHeadingText(appearance.heading());
+        setHeading(appearance.heading());
         columnsSpinner.setMinValue(1);
         columnsSpinner.setValue(1, true);
         ToggleGroup toggle = new ToggleGroup();

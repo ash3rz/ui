@@ -91,7 +91,7 @@ public class GenomeSearchDialog extends Window {
     @Inject
     public GenomeSearchDialog() {
         apperance = GWT.<Appearance> create(Appearance.class);
-        setHeadingHtml(apperance.heading());
+        setHeading(apperance.heading());
         setModal(true);
         store = new ListStore<>(new ModelKeyProvider<Genome>() {
 

@@ -566,7 +566,7 @@ public class AppsEditorPresenterImpl implements AppsEditorView.Presenter,
             public void onSuccess(ArrayList<String> result) {
                 final IPlantDialog dlg = new IPlantDialog();
                 dlg.setPredefinedButtons(PredefinedButton.OK);
-                dlg.setHeadingText(appIntMessages.commandLineOrder());
+                dlg.setHeading(appIntMessages.commandLineOrder());
                 dlg.setModal(true);
                 dlg.setOkButtonText(messages.done());
                 dlg.setAutoHide(false);
@@ -604,7 +604,7 @@ public class AppsEditorPresenterImpl implements AppsEditorView.Presenter,
         AppTemplate appTemplate = flushViewAndClean();
         Splittable split = AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(appTemplateUtils.removeEmptyGroupArguments(appTemplate)));
         IPlantDialog dlg = new IPlantDialog();
-        dlg.setHeadingText(appIntMessages.previewJSON());
+        dlg.setHeading(appIntMessages.previewJSON());
         dlg.setPredefinedButtons(PredefinedButton.OK);
         dlg.setSize("500", "350");
         dlg.setResizable(false);

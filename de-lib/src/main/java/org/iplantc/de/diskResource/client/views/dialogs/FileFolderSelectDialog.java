@@ -90,7 +90,7 @@ public class FileFolderSelectDialog extends IPlantDialog implements TakesValue<L
         setSize(appearance.getWidth(), appearance.getHeight());
         setMinHeight(appearance.getMinHeight());
         setMinWidth(appearance.getMinWidth());
-        setHeadingText(appearance.getHeaderText());
+        setHeading(appearance.getHeaderText());
 
         selectedItemTextField = new TextField();
 

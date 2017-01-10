@@ -28,7 +28,7 @@ public class AnalysisSharingDialog extends IPlantDialog implements SelectHandler
         setModal(true);
         setResizable(false);
         // addHelp(new HTML(appearance.sharePermissionsHelp()));
-        setHeadingText("Manage Sharing");
+        setHeading("Manage Sharing");
         setOkButtonText("Done");
         addOkButtonSelectHandler(this);
     }

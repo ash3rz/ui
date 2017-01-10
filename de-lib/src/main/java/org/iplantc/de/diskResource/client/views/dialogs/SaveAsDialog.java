@@ -83,7 +83,7 @@ public class SaveAsDialog extends IPlantDialog {
         setResizable(true);
         setSize(appearance.dialogWidth(),
                 appearance.dialogHeight());
-        setHeadingText(appearance.saveAsHeadingText());
+        setHeading(appearance.saveAsHeadingText());
 
         addKeyHandlers(getOkButton());
 

@@ -396,7 +396,7 @@ public class AnalysesToolBarImpl extends Composite implements AnalysisToolBarVie
                                                               -1,
                                                               name,
                                                               new DiskResourceNameValidator());
-        dlg.setHeadingText(appearance.renameAnalysis());
+        dlg.setHeading(appearance.renameAnalysis());
         dlg.addOkButtonSelectHandler(new SelectEvent.SelectHandler() {
             @Override
             public void onSelect(SelectEvent event) {

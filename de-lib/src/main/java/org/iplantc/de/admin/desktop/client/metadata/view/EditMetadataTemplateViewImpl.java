@@ -229,7 +229,7 @@ public class EditMetadataTemplateViewImpl extends Composite implements IsWidget,
         final IPlantDialog ipd = new IPlantDialog();
         ipd.setSize("500px", "300px");
         ipd.add(eve.asWidget());
-        ipd.setHeadingText("Edit Enum Values");
+        ipd.setHeading("Edit Enum Values");
         ipd.show();
         ipd.setHideOnButtonClick(false);
         ipd.addOkButtonSelectHandler(new SelectHandler() {

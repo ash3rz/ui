@@ -25,7 +25,7 @@ public class MetadataCopyDialog extends IPlantDialog implements TakesValue<List<
         multiFileFolderSelector = selectionFieldFactory.creaeteMultiFileSelector(true);
         add(multiFileFolderSelector);
         setHideOnButtonClick(false);
-        setHeadingText(this.appearance.copyMetadata());
+        setHeading(this.appearance.copyMetadata());
         setSize("400px", "350px");
         setModal(false);
     }
@@ -54,7 +54,7 @@ public class MetadataCopyDialog extends IPlantDialog implements TakesValue<List<
     }
 
     public void setHeader(String srcPath) {
-        setHeadingText(this.appearance.copyMetadata() + " from: " + srcPath);
+        setHeading(this.appearance.copyMetadata() + " from: " + srcPath);
     }
 
 }

@@ -357,7 +357,7 @@ public class MetadataTemplateViewDialog extends IPlantDialog {
                         w.setHideOnButtonClick(true);
                         w.setSize("350", "400");
                         w.setPredefinedButtons(PredefinedButton.OK);
-                        w.setHeadingText(MetadataTemplateViewDialog.this.getHeader().getText());
+                        w.setHeading(MetadataTemplateViewDialog.this.getHeader().getText());
                         w.setBodyStyle("background: #fff;");
                         w.setWidget(helpVlc);
                         w.show();

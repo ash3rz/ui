@@ -64,7 +64,7 @@ public class FileViewerWindow extends IplantWindowBase implements IsMaskable,
         this.configAB = fileViewerWindowConfig;
         this.file = configAB.getFile();
         if (file != null) {
-            setHeadingText(file.getName());
+            setHeading(file.getName());
             presenter.go(this,
                          file,
                          configAB.getParentFolder(),
@@ -73,7 +73,7 @@ public class FileViewerWindow extends IplantWindowBase implements IsMaskable,
                          new CriticalPathCallback());
         } else {
             String title = "Untitled-" + Math.random();
-            setHeadingText(title);
+            setHeading(title);
             boolean isTabularFile = windowConfig instanceof TabularFileViewerWindowConfig;
             boolean isPathListFile = windowConfig instanceof PathListWindowConfig;
             String delimiter = isTabularFile ? ((TabularFileViewerWindowConfig) windowConfig).getSeparator() : "";
@@ -124,10 +124,10 @@ public class FileViewerWindow extends IplantWindowBase implements IsMaskable,
     @Override
     public void onEditorDirtyStateChanged(DirtyStateChangedEvent event) {
         if (event.isDirty()) {
-            setHeadingHtml(getHeader().getHTML()
+            setHeading(getHeader().getHTML()
                     + "<span style='color:red; vertical-align: super'> * </span>");
         } else {
-            setHeadingText(presenter.getTitle());
+            setHeading(presenter.getTitle());
         }
     }
 

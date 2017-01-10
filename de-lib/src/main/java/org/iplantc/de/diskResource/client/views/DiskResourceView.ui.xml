@@ -67,7 +67,7 @@
 
         <!-- Details Panel -->
         <container:east layoutData="{eastData}">
-            <gxt:ContentPanel headingText="{appearance.details}">
+            <gxt:ContentPanel heading="{appearance.details}">
                 <views:DetailsView ui:field="detailsView" />
             </gxt:ContentPanel>
         </container:east>

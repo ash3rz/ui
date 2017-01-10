@@ -234,7 +234,7 @@ public class AdminAppsToolbarViewImpl extends Composite implements AdminAppsTool
     void onAddCategoryClicked(SelectEvent event) {
         final IPlantPromptDialog dlg = new IPlantPromptDialog(appearance.add(),
                                                   0, "", null);
-        dlg.setHeadingText(appearance.addCategoryPrompt());
+        dlg.setHeading(appearance.addCategoryPrompt());
         dlg.addOkButtonSelectHandler(new SelectEvent.SelectHandler() {
             @Override
             public void onSelect(SelectEvent event) {

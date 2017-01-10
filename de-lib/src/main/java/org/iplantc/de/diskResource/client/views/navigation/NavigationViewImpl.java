@@ -100,7 +100,7 @@ public class NavigationViewImpl extends ContentPanel implements NavigationView {
         this.treeStore = treeStore;
         this.treeLoader = treeLoader;
         this.appearance = appearance;
-        setHeadingText(appearance.headingText());
+        setHeading(appearance.headingText());
         setCollapsible(false);
         setHeaderVisible(true);
 

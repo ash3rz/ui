@@ -47,7 +47,7 @@ public class UpdateToolRequestDialog extends IPlantDialog {
     public UpdateToolRequestDialog(final ToolRequest toolRequest,
                                    final ToolRequestAutoBeanFactory factory) {
         this.factory = factory;
-        setHeadingText(appearance.updateToolRequestDlgHeading());
+        setHeading(appearance.updateToolRequestDlgHeading());
         getOkButton().setText(appearance.submitBtnText());
         add(uiBinder.createAndBindUi(this));
         currentStatusLabel.setText(toolRequest.getStatus());

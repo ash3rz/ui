@@ -45,7 +45,7 @@ public class CategorizeDialog extends IPlantDialog implements CategorizeHierarch
         setHideOnButtonClick(false);
         setResizable(true);
         setUpButtons();
-        setHeadingText(appearance.categorizeApp(targetApp));
+        setHeading(appearance.categorizeApp(targetApp));
 
         setOnEsc(false);
 

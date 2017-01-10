@@ -138,7 +138,7 @@ public class ManageCollaboratorsViewImpl extends Composite implements ManageColl
         switch (mode) {
             case MANAGE:
                 grid.getView().setEmptyText(I18N.DISPLAY.noCollaborators());
-                collaboratorListPnl.setHeadingText(I18N.DISPLAY.myCollaborators());
+                collaboratorListPnl.setHeading(I18N.DISPLAY.myCollaborators());
                 manageBtn.setVisible(false);
                 deleteBtn.setVisible(true);
                 con.show(LayoutRegion.NORTH);
@@ -148,7 +148,7 @@ public class ManageCollaboratorsViewImpl extends Composite implements ManageColl
                 con.hide(LayoutRegion.NORTH);
                 manageBtn.setVisible(true);
                 deleteBtn.setVisible(false);
-                collaboratorListPnl.setHeadingText(I18N.DISPLAY.selectCollabs());
+                collaboratorListPnl.setHeading(I18N.DISPLAY.selectCollabs());
                 break;
         }
     }
@@ -195,7 +195,7 @@ public class ManageCollaboratorsViewImpl extends Composite implements ManageColl
     }
 
     private void init() {
-        collaboratorListPnl.setHeadingText(I18N.DISPLAY.myCollaborators());
+        collaboratorListPnl.setHeading(I18N.DISPLAY.myCollaborators());
         grid.getSelectionModel().addSelectionChangedHandler(this);
     }
 

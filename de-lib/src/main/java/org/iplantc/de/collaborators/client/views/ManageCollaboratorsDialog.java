@@ -52,7 +52,7 @@ public class ManageCollaboratorsDialog extends IPlantDialog {
 
     private void initDialog() {
         setPredefinedButtons(PredefinedButton.OK);
-        setHeadingText(I18N.DISPLAY.collaborators());
+        setHeading(I18N.DISPLAY.collaborators());
         addHelp(new HTML(I18N.HELP.collaboratorsHelp()));
         setPixelSize(450, 400);
         addOkButtonHandler();

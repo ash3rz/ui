@@ -12,7 +12,7 @@ public class Md5DisplayDialog extends IPlantPromptDialog {
                             String initialText,
                             Validator<String> validator) {
         super(caption, maxLength, initialText, validator);
-        setHeadingText(heading);
+        setHeading(heading);
         setPredefinedButtons(PredefinedButton.OK);
     }
 

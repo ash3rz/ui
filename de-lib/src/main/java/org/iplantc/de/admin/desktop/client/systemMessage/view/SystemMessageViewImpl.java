@@ -106,7 +106,7 @@ public class SystemMessageViewImpl extends Composite implements SystemMessageVie
     @Override
     public void editSystemMessage(SystemMessage sysMsgToEdit) {
         final IPlantDialog editSystemMessageDlg = new IPlantDialog();
-        editSystemMessageDlg.setHeadingText(appearance.editSystemMsgDlgHeading());
+        editSystemMessageDlg.setHeading(appearance.editSystemMsgDlgHeading());
         editSystemMessageDlg.setHideOnButtonClick(false);
         editSystemMessageDlg.getOkButton().setText(appearance.submitButtonText());
         editSystemMessageDlg.setWidth(appearance.editSystemMsgDlgWidth());
@@ -163,7 +163,7 @@ public class SystemMessageViewImpl extends Composite implements SystemMessageVie
     @UiHandler("addBtn")
     void addButtonClicked(SelectEvent event) {
         final IPlantDialog createSystemMessageDlg = new IPlantDialog();
-        createSystemMessageDlg.setHeadingText(appearance.createSystemMsgDlgHeading());
+        createSystemMessageDlg.setHeading(appearance.createSystemMsgDlgHeading());
         createSystemMessageDlg.setHideOnButtonClick(false);
         createSystemMessageDlg.getOkButton().setText(appearance.submitButtonText());
         createSystemMessageDlg.setWidth(appearance.editSystemMsgDlgWidth());

@@ -48,7 +48,7 @@ public class AppDocMarkdownDialog extends IPlantDialog implements SaveMarkdownSe
         setModal(false);
         setResizable(false);
         setSize("700px", "500px");
-        setHeadingText(app.getName());
+        setHeading(app.getName());
         getButtonBar().clear();
         ourUiBinder.createAndBindUi(this);
 

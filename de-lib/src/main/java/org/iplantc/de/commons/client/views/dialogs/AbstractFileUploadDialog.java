@@ -94,7 +94,7 @@ public abstract class AbstractFileUploadDialog extends IPlantDialog {
         // Reset the "OK" button text
         getOkButton().setText(appearance.upload());
         getOkButton().setEnabled(false);
-        setHeadingText(appearance.upload());
+        setHeading(appearance.upload());
         addCancelButtonSelectHandler(new SelectEvent.SelectHandler() {
             @Override
             public void onSelect(SelectEvent event) {

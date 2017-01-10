@@ -1,5 +1,7 @@
 package org.iplantc.de.apps.widgets.client.view.editors;
 
+import static com.sencha.gxt.core.client.dom.ScrollSupport.ScrollMode.AUTOY;
+
 import org.iplantc.de.apps.widgets.client.events.AppTemplateSelectedEvent;
 import org.iplantc.de.apps.widgets.client.events.ArgumentAddedEvent;
 import org.iplantc.de.apps.widgets.client.events.ArgumentAddedEvent.ArgumentAddedEventHandler;
@@ -34,7 +36,6 @@ import com.google.gwt.user.client.Event;
 import com.google.inject.Inject;
 import com.google.inject.Provider;
 
-import static com.sencha.gxt.core.client.dom.ScrollSupport.ScrollMode.AUTOY;
 import com.sencha.gxt.core.client.util.Margins;
 import com.sencha.gxt.widget.core.client.ContentPanel;
 import com.sencha.gxt.widget.core.client.container.MarginData;
@@ -271,7 +272,7 @@ public class ArgumentGroupEditorImpl extends ContentPanel implements AppTemplate
         boolean isRequired = containsRequiredArguments(value);
         // When the value is set, update the FieldSet header text
         labelText.append(appAppearance.createContentPanelHeaderLabel(SafeHtmlUtils.fromString(value.getLabel()), isRequired));
-        setHeadingHtml(labelText.toSafeHtml());
+        setHeading(labelText.toSafeHtml());
     }
 
     @Override
@@ -282,7 +283,7 @@ public class ArgumentGroupEditorImpl extends ContentPanel implements AppTemplate
             labelText.appendHtmlConstant(errImg.getString());
         }
         labelText.append(appAppearance.createContentPanelHeaderLabel(SafeHtmlUtils.fromString(model.getLabel()), containsRequiredArguments(model)));
-        setHeadingHtml(labelText.toSafeHtml());
+        setHeading(labelText.toSafeHtml());
     }
 
     @Override

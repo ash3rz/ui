@@ -43,7 +43,7 @@ public class AppDetailsDialog extends IPlantDialog {
                      final DetailsHierarchyClicked.DetailsHierarchyClickedHandler hierarchySelectionHandler,
                      final DetailsCategoryClicked.DetailsCategoryClickedHandler categoryClickedHandler) {
 
-        setHeadingText(app.getName());
+        setHeading(app.getName());
         presenterProvider.get(new AsyncCallback<AppDetailsView.Presenter>() {
             @Override
             public void onFailure(Throwable caught) {

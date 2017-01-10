@@ -38,7 +38,7 @@
                                        adjustForScroll="true"
                                        scrollMode="AUTOY"
                                        styleName="{style.user_pref}">
-        <form:FieldSet headingText="{appearance.preferences}"
+        <form:FieldSet heading="{appearance.preferences}"
                        collapsible="true">
             <container:VerticalLayoutContainer ui:field="prefContainer"
                                                height="170">
@@ -86,7 +86,7 @@
                 </container:child>
             </container:VerticalLayoutContainer>
         </form:FieldSet>
-        <form:FieldSet headingText="{appearance.keyboardShortCut}"
+        <form:FieldSet heading="{appearance.keyboardShortCut}"
                        collapsible="true">
             <container:VerticalLayoutContainer ui:field="kbContainer">
                 <form:FieldLabel labelWidth="150"

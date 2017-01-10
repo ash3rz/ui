@@ -178,7 +178,7 @@ public class MetadataPresenterImpl implements MetadataView.Presenter{
         });
         view.setModal(false);
         view.setSize("400px", "400px");
-        view.setHeadingText(appearance.selectTemplate());
+        view.setHeading(appearance.selectTemplate());
         view.show();
    }
 
@@ -301,7 +301,7 @@ public class MetadataPresenterImpl implements MetadataView.Presenter{
             templateView.addOkButtonSelectHandler(new TemplateViewOkSelectHandler(isWritable(),
                                                                                   templateView));
             templateView.addCancelButtonSelectHandler(new TemplateViewCancelSelectHandler(templateView));
-            templateView.setHeadingText(result.getName());
+            templateView.setHeading(result.getName());
             templateView.setModal(false);
             templateView.setSize("600px", "400px");
             templateView.show();

@@ -22,7 +22,7 @@ public final class SystemMessagesWindow extends IplantWindowBase {
 
     @Inject
     SystemMessagesWindow(final IplantDisplayStrings displayStrings) {
-        setHeadingText(displayStrings.systemMessagesLabel());
+        setHeading(displayStrings.systemMessagesLabel());
         setWidth(computeDefaultWidth());
         setHeight(computeDefaultHeight());
     }

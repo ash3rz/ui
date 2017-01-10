@@ -41,7 +41,7 @@ public class OverwriteToolDialog extends IPlantDialog implements IsHideable {
     public void setText(Throwable caught) {
         AppList appList =
                 AutoBeanCodex.decode(appAutoBeanFactory, AppList.class, caught.getMessage()).as();
-        setHeadingText(appearance.confirmOverwriteTitle());
+        setHeading(appearance.confirmOverwriteTitle());
 
         HTML bodyBeforeApps = new HTML();
         bodyBeforeApps.setHTML(appearance.confirmOverwriteDangerZone());

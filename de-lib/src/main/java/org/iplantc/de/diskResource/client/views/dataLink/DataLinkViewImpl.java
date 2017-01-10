@@ -146,7 +146,7 @@ public class DataLinkViewImpl implements DataLinkView,
     void onCopyDataLinkButtonSelected(SelectEvent event) {
         // Open dialog window with text selected.
         IPlantDialog dlg = new IPlantDialog();
-        dlg.setHeadingText(appearance.copy());
+        dlg.setHeading(appearance.copy());
         dlg.setHideOnButtonClick(true);
         dlg.setResizable(false);
         dlg.setSize(appearance.copyDataLinkDlgWidth(), appearance.copyDataLinkDlgHeight());

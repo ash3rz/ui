@@ -118,5 +118,5 @@ public interface AppsListView extends IsWidget,
 
     void setSearchPattern(String searchPattern);
 
-    void setHeadingText(String text);
+    void setHeading(String text);
 }

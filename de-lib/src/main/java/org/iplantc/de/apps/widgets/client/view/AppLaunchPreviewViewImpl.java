@@ -52,7 +52,7 @@ public class AppLaunchPreviewViewImpl extends Window implements AppLaunchPreview
 
     @Override
     public void edit(AppTemplate appTemplate, JobExecution je) {
-        setHeadingText("Preview of " + appTemplate.getName());
+        setHeading("Preview of " + appTemplate.getName());
         editorDriver.edit(appTemplate);
     }
 

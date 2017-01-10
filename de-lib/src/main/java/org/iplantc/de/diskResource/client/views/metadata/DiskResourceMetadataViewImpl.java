@@ -306,7 +306,7 @@ public class DiskResourceMetadataViewImpl extends Composite implements MetadataV
         userMetadataPanel.setSize(appearance.panelWidth(), appearance.panelHeight());
         userMetadataPanel.setCollapsible(true);
         userMetadataPanel.getHeader().addStyleName(ThemeStyles.get().style().borderTop());
-        userMetadataPanel.setHeadingHtml(appearance.boldHeader(appearance.userMetadata()));
+        userMetadataPanel.setHeading(appearance.boldHeader(appearance.userMetadata()));
     }
 
     void buildAdditionalMetadataPanel() {
@@ -314,7 +314,7 @@ public class DiskResourceMetadataViewImpl extends Composite implements MetadataV
         additionalMetadataPanel.setSize(appearance.panelWidth(), appearance.panelHeight());
         additionalMetadataPanel.setCollapsible(true);
         additionalMetadataPanel.getHeader().addStyleName(ThemeStyles.get().style().borderTop());
-        additionalMetadataPanel.setHeadingHtml(appearance.boldHeader(appearance.additionalMetadata()));
+        additionalMetadataPanel.setHeading(appearance.boldHeader(appearance.additionalMetadata()));
     }
 
 

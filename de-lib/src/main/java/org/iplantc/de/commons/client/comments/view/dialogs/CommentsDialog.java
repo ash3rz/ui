@@ -19,7 +19,7 @@ public class CommentsDialog extends Window {
 
     @Inject
     CommentsDialog(final IplantDisplayStrings displayStrings){
-        setHeadingText(displayStrings.comments());
+        setHeading(displayStrings.comments());
         remove(this.getButtonBar());
         setSize("600px", "450px");
     }

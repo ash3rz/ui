@@ -118,7 +118,7 @@ public class RequestHistoryDialog extends Dialog {
     private ContextualHelpPopup helpPopup;
 
     public RequestHistoryDialog(String name, List<RequestHistory> history) {
-        setHeadingText(name + " - " + I18N.DISPLAY.requestStatus()); //$NON-NLS-1$
+        setHeading(name + " - " + I18N.DISPLAY.requestStatus()); //$NON-NLS-1$
         setSize("480", "320"); //$NON-NLS-1$ //$NON-NLS-2$
         setResizable(true);
         setHideOnButtonClick(true);

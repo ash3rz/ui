@@ -121,7 +121,7 @@ public class BulkMetadataDialog extends Dialog {
                               @Assisted("mode") BULK_MODE mode) {
 
         apperance = GWT.<Appearance>create(Appearance.class);
-        setHeadingText(apperance.heading());
+        setHeading(apperance.heading());
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
         setModal(true);
         this.mode = mode;

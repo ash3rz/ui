@@ -41,7 +41,7 @@ public class PreferencesDialog extends IPlantDialog implements DialogHideEvent.D
         super(true);
         this.presenter = presenter;
         this.appearance = appearance;
-        setHeadingText(appearance.preferences());
+        setHeading(appearance.preferences());
         getButton(PredefinedButton.OK).setText(appearance.done());
         getButton(PredefinedButton.CANCEL);
         defaultsBtn = new TextButton(appearance.restoreDefaults());

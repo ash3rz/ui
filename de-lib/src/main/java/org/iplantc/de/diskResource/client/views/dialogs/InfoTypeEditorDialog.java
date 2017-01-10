@@ -33,7 +33,7 @@ public class InfoTypeEditorDialog extends IPlantDialog {
     InfoTypeEditorDialog(final DiskResourceServiceFacade diskResourceService) {
         this.diskResourceService = diskResourceService;
         setSize("300", "100");
-        setHeadingText("Select Type");
+        setHeading("Select Type");
         infoTypeCbo = new SimpleComboBox<>(new LabelProvider<InfoType>() {
 
             @Override

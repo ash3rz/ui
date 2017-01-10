@@ -127,7 +127,7 @@ public class DEFeedbackDialog extends IPlantDialog {
     @Inject
     public DEFeedbackDialog(final FeedbackAppearance appearance) {
         this.appearance = appearance;
-        setHeadingText(appearance.displayStrings().headingText());
+        setHeading(appearance.displayStrings().headingText());
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
         getButton(PredefinedButton.OK).setText(appearance.displayStrings().submit());
         setHideOnButtonClick(false);

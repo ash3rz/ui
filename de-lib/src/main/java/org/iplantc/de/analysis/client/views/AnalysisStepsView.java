@@ -62,7 +62,7 @@ public class AnalysisStepsView extends Composite {
                 AnalysisStep as = listStore.get(event.getRowIndex());
                 Window d = new Window();
                 d.setSize("300px", "100px");
-                d.setHeadingText(AnalysisStepsView.this.appearance.jobId());
+                d.setHeading(AnalysisStepsView.this.appearance.jobId());
                 TextField tf = new TextField();
                 tf.setValue(as.getId());
                 d.add(tf);

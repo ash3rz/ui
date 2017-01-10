@@ -37,7 +37,7 @@ public class AppSelectionDialog extends Dialog {
 
     public AppSelectionDialog() {
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CLOSE);
-        setHeadingText(I18N.DISPLAY.selectWindowTitle());
+        setHeading(I18N.DISPLAY.selectWindowTitle());
         setSize("800", "400"); //$NON-NLS-1$ //$NON-NLS-2$
         setModal(true);
         setAutoHide(false);

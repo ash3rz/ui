@@ -86,16 +86,16 @@ public class AppsListPresenterImpl implements AppsListView.Presenter,
                     public void onDialogHide(DialogHideEvent event) {
                         if (event.getHideButton() == Dialog.PredefinedButton.NO) {
                             listStore.clear();
-                            gridView.setHeadingText(appearance.agaveAuthRequiredTitle());
-                            tileView.setHeadingText(appearance.agaveAuthRequiredTitle());
+                            gridView.setHeading(appearance.agaveAuthRequiredTitle());
+                            tileView.setHeading(appearance.agaveAuthRequiredTitle());
                         }
                     }
                 });
             } else {
                 postToErrorHandler(caught);
                 listStore.clear();
-                gridView.setHeadingText(appearance.appLoadError());
-                tileView.setHeadingText(appearance.appLoadError());
+                gridView.setHeading(appearance.appLoadError());
+                tileView.setHeading(appearance.appLoadError());
             }
             activeView.unmask();
         }

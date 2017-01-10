@@ -101,7 +101,7 @@ public class FileSelectDialog extends IPlantDialog implements TakesValue<List<Fi
 
         setResizable(true);
         setSize("640", "480");
-        setHeadingText(appearance.headerText());
+        setHeading(appearance.headerText());
 
         selectedFileField = new TextField();
     }

@@ -121,7 +121,7 @@ public class FolderSelectDialog extends IPlantDialog implements TakesValue<Folde
 
         setResizable(true);
         setSize("640", "480");
-        setHeadingText(appearance.headerText());
+        setHeading(appearance.headerText());
 
         selectedFolderTextField = new TextField();
 

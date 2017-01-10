@@ -90,7 +90,7 @@ public class TemplateNameCell extends AbstractCell<MetadataTemplateInfo> {
         Dialog d = new Dialog();
         d.setSize("500","100");
         d.setHideOnButtonClick(true);
-        d.setHeadingText(appearance.description());
+        d.setHeading(appearance.description());
         HTML desc = new HTML(value.getDescription());
         desc.setStylePrimaryName(appearance.background());
         d.add(desc);

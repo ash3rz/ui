@@ -90,7 +90,7 @@ public class FileUploadByUrlDialog extends IPlantDialog implements HasPending<En
         // Reset the "OK" button text.
         getOkButton().setText(appearance.urlImport());
         getOkButton().setEnabled(false);
-        setHeadingText(appearance.importLabel());
+        setHeading(appearance.importLabel());
 
         add(UIBINDER.createAndBindUi(this));
 

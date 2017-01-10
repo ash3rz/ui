@@ -82,7 +82,7 @@
         </con:child>
         <con:child layoutData="{layoutData}">
             <cp:ContentPanel ui:field="catPanel"
-                             headingHtml="{appearance.publicCategories}"
+                             heading="{appearance.publicCategories}"
                              height="200">
                 <tree:Tree ui:field="tree"/>
             </cp:ContentPanel>
@@ -143,7 +143,7 @@
 
         <con:child layoutData="{layoutData}">
             <cp:ContentPanel ui:field="refPanel"
-                             headingHtml="{appearance.publicAttach}"
+                             heading="{appearance.publicAttach}"
                              height="150">
                 <con:VerticalLayoutContainer>
                     <con:child>

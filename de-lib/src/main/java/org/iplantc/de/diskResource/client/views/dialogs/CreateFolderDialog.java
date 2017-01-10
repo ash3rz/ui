@@ -43,7 +43,7 @@ public class CreateFolderDialog extends IPlantPromptDialog {
         this.appearance = appearance;
         diskResourceUtil = DiskResourceUtil.getInstance();
         setWidth(appearance.dialogWidth());
-        setHeadingText(appearance.newFolder());
+        setHeading(appearance.newFolder());
         initDestPathLabel(parentFolder.getPath());
         addOkButtonSelectHandler(new SelectEvent.SelectHandler() {
             @Override

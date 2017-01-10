@@ -61,7 +61,7 @@ public class SubmitAppForPublicDialog extends IPlantDialog implements SelectHand
         this.appearance = appearance;
 
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
-        setHeadingText(appearance.publicSubmissionForm());
+        setHeading(appearance.publicSubmissionForm());
         setOkButtonText(appearance.submit());
         setPixelSize(615, 480);
         setHideOnButtonClick(false);

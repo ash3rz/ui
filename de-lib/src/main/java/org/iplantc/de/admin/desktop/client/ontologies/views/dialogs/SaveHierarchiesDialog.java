@@ -46,7 +46,7 @@ public class SaveHierarchiesDialog extends IPlantDialog implements IsHideable {
         this.handlers = handlers;
 
         setHideOnButtonClick(false);
-        setHeadingText(appearance.saveHierarchy());
+        setHeading(appearance.saveHierarchy());
         setResizable(true);
         setPixelSize(appearance.publishDialogWidth(), appearance.publishDialogHeight());
         setMinHeight(appearance.publishDialogMinHeight());

@@ -15,7 +15,7 @@
         <ui:attributes width="1" height="-1" margins="{margins}"/>
     </ui:with>
 
-    <form:FieldSet headingText="{appearance.toolImplementationFieldSetLabel}">
+    <form:FieldSet heading="{appearance.toolImplementationFieldSetLabel}">
         <container:VerticalLayoutContainer ui:field="layoutContainer">
             <container:child layoutData="{layoutData}">
                 <form:FieldLabel ui:field="implementorLabel">

@@ -21,7 +21,7 @@
             <gxt:FramedPanel ui:field="analysisListPnl"
                              collapsible="false"
                              headerVisible="true"
-                             headingText="Selected Analyses"
+                             heading="Selected Analyses"
                              height="200px">
                 <grid:Grid ui:field="grid"
                            cm="{analysisColumnModel}"

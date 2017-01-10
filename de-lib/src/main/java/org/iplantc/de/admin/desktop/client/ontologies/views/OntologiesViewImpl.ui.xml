@@ -102,7 +102,7 @@
             </toolbar:ToolBar>
         </container:north>
         <container:center layoutData="{centerData}">
-            <gxt:ContentPanel headingText="{appearance.westPanelHeader}" ui:field="editorPanel">
+            <gxt:ContentPanel heading="{appearance.westPanelHeader}" ui:field="editorPanel">
                 <container:BorderLayoutContainer borders="true">
                     <container:north layoutData="{northData}">
                         <toolbar:ToolBar>
@@ -125,7 +125,7 @@
                             <container:CenterLayoutContainer ui:field="noTreePanel">
                                 <g:Label text="No ontology version selected."/>
                             </container:CenterLayoutContainer>
-                            <gxt:ContentPanel ui:field="editorTreePanel" headingText="{appearance.treePanelHeader}">
+                            <gxt:ContentPanel ui:field="editorTreePanel" heading="{appearance.treePanelHeader}">
                                 <tree:Tree ui:field="editorTree" store="{editorTreeStore}"/>
                             </gxt:ContentPanel>
                             <container:CenterLayoutContainer ui:field="emptyTreePanel">
@@ -140,7 +140,7 @@
             </gxt:ContentPanel>
         </container:center>
         <container:east layoutData="{eastData}">
-            <gxt:ContentPanel headingText="{appearance.eastPanelHeader}" ui:field="previewPanel">
+            <gxt:ContentPanel heading="{appearance.eastPanelHeader}" ui:field="previewPanel">
                 <container:BorderLayoutContainer>
                     <container:north layoutData="{northData}">
                         <toolbar:ToolBar>
@@ -152,7 +152,7 @@
                         </toolbar:ToolBar>
                     </container:north>
                     <container:center layoutData="{centerData}">
-                        <gxt:ContentPanel ui:field="previewTreePanel" headingText="{appearance.treePanelHeader}">
+                        <gxt:ContentPanel ui:field="previewTreePanel" heading="{appearance.treePanelHeader}">
                             <tree:Tree ui:field="previewTree" store="{previewTreeStore}"/>
                         </gxt:ContentPanel>
                     </container:center>

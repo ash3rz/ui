@@ -22,7 +22,7 @@ public class NotificationWindow extends IplantWindowBase {
                        NotificationView.NotificationViewAppearance appearance) {
         this.presenter = presenter;
         this.appearance = appearance;
-        setHeadingText(appearance.notifications());
+        setHeading(appearance.notifications());
         ensureDebugId(DeModule.WindowIds.NOTIFICATION);
         setSize("600", "375");
     }

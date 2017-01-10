@@ -79,7 +79,7 @@ public class AppEditorWindow extends IplantWindowBase implements AppPublishedEve
                 window.setEditPublicAppHeader(name);
             } else {
                 window.getHeader().removeTool(window.editPublicAppContextHlpTool);
-                window.setHeadingText(name);
+                window.setHeading(name);
             }
             window.fireEvent(new WindowHeadingUpdatedEvent(name));
 
@@ -146,7 +146,7 @@ public class AppEditorWindow extends IplantWindowBase implements AppPublishedEve
         editPublicAppContextHlpTool = new ContextualHelpToolButton(new HTML(helpMessages.editPublicAppHelp()));
         renameCmd = new RenameWindowHeaderCmdImpl(this);
 
-        setHeadingText(appearance.headingText());
+        setHeading(appearance.headingText());
         setSize("800", "480");
         setMinWidth(appearance.minWidth());
         setMinHeight(appearance.minHeight());
@@ -260,7 +260,7 @@ public class AppEditorWindow extends IplantWindowBase implements AppPublishedEve
                     });
             at.onSuccess(config.getAppTemplate().getPayload());
         } else if (Strings.isNullOrEmpty(config.getAppId())) {
-            setHeadingText(appearance.headingText());
+            setHeading(appearance.headingText());
 
             // Create empty AppTemplate
             AppTemplate newAppTemplate = factory.appTemplate().as();
@@ -318,7 +318,7 @@ public class AppEditorWindow extends IplantWindowBase implements AppPublishedEve
     }
 
     private void setEditPublicAppHeader(String appName) {
-        setHeadingHtml(appearance.editPublicAppWarningTitle(SafeHtmlUtils.fromString(appName)));
+        setHeading(appearance.editPublicAppWarningTitle(SafeHtmlUtils.fromString(appName)));
 
         // JDS Only insert if not there.
         if (getHeader().getTool(0) != editPublicAppContextHlpTool) {

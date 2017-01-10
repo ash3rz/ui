@@ -53,7 +53,7 @@ public class PipelineEditorWindow extends IplantWindowBase {
     PipelineEditorWindow(final IplantDisplayStrings displayStrings) {
         this.displayStrings = displayStrings;
 
-        setHeadingText(displayStrings.pipeline());
+        setHeading(displayStrings.pipeline());
         setSize("900", "500");
         setMinWidth(640);
         setMinHeight(440);

@@ -43,7 +43,7 @@ public class DeDiskResourceWindow extends IplantWindowBase implements FolderSele
                          final IplantDisplayStrings displayStrings) {
         this.presenterFactory = presenterFactory;
         this.displayStrings = displayStrings;
-        setHeadingText(displayStrings.data());
+        setHeading(displayStrings.data());
         setSize("900", "480");
         setMinWidth(900);
         setMinHeight(480);
@@ -103,9 +103,9 @@ public class DeDiskResourceWindow extends IplantWindowBase implements FolderSele
         Folder selectedFolder = event.getSelectedFolder();
 
         if (selectedFolder == null || Strings.isNullOrEmpty(selectedFolder.getName())) {
-            setHeadingText(displayStrings.data());
+            setHeading(displayStrings.data());
         } else {
-            setHeadingText(displayStrings.dataWindowTitle(selectedFolder.getName()));
+            setHeading(displayStrings.dataWindowTitle(selectedFolder.getName()));
         }
 
         fireEvent(new WindowHeadingUpdatedEvent());

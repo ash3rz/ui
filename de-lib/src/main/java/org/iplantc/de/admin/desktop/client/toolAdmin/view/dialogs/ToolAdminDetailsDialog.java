@@ -46,7 +46,7 @@ public class ToolAdminDetailsDialog extends IPlantDialog implements IsHideable,
         this.appearance = appearance;
 
         setHideOnButtonClick(false);
-        setHeadingText(appearance.dialogWindowName());
+        setHeading(appearance.dialogWindowName());
         setResizable(true);
         setPixelSize(1000, 500);
         setMinHeight(200);

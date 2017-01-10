@@ -117,7 +117,7 @@ public class AppsGridViewImpl extends ContentPanel implements AppsListView,
     @Override
     public void onAppCategorySelectionChanged(AppCategorySelectionChangedEvent event) {
         // FIXME Move to appearance
-        setHeadingText(Joiner.on(" >> ").join(event.getGroupHierarchy()));
+        setHeading(Joiner.on(" >> ").join(event.getGroupHierarchy()));
 
         if (!event.getAppCategorySelection().isEmpty()) {
             // Reset Search
@@ -127,7 +127,7 @@ public class AppsGridViewImpl extends ContentPanel implements AppsListView,
 
     @Override
     public void onOntologyHierarchySelectionChanged(OntologyHierarchySelectionChangedEvent event) {
-        setHeadingText(Joiner.on(" >> ").join(event.getPath()));
+        setHeading(Joiner.on(" >> ").join(event.getPath()));
 
         if (event.getSelectedHierarchy() != null) {
             // Reset Search
@@ -138,7 +138,7 @@ public class AppsGridViewImpl extends ContentPanel implements AppsListView,
     @Override
     public void onAppSearchResultLoad(AppSearchResultLoadEvent event) {
         int total = event.getResults() == null ? 0 : event.getResults().size();
-        setHeadingText(appearance.searchAppResultsHeader(event.getSearchText(), total));
+        setHeading(appearance.searchAppResultsHeader(event.getSearchText(), total));
         unmask();
     }
 

@@ -1,7 +1,9 @@
 package org.iplantc.de.apps.integration.client.view.propertyEditors;
 
+import static com.sencha.gxt.cell.core.client.form.ComboBoxCell.TriggerAction.ALL;
 import static org.iplantc.de.apps.integration.shared.AppIntegrationModule.Ids;
 import static org.iplantc.de.apps.integration.shared.AppIntegrationModule.PropertyPanelIds;
+
 import org.iplantc.de.apps.integration.client.view.propertyEditors.widgets.SelectionItemPropertyEditor;
 import org.iplantc.de.apps.widgets.client.view.editors.SelectionItemModelKeyProvider;
 import org.iplantc.de.apps.widgets.client.view.editors.SelectionItemProperties;
@@ -34,7 +36,6 @@ import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.web.bindery.autobean.shared.Splittable;
 
-import static com.sencha.gxt.cell.core.client.form.ComboBoxCell.TriggerAction.ALL;
 import com.sencha.gxt.data.client.editor.ListStoreEditor;
 import com.sencha.gxt.data.shared.ListStore;
 import com.sencha.gxt.widget.core.client.Dialog.PredefinedButton;
@@ -153,7 +154,7 @@ public class DecimalSelectionPropertyEditor extends AbstractArgumentPropertyEdit
     void onEditSimpleListBtnClicked(@SuppressWarnings("unused") SelectEvent event) {
         IPlantDialog dlg = new IPlantDialog();
         dlg.setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);
-        dlg.setHeadingText(appearance.getPropertyPanelLabels().singleSelectionCreateLabel());
+        dlg.setHeading(appearance.getPropertyPanelLabels().singleSelectionCreateLabel());
         dlg.setModal(true);
         dlg.setOkButtonText(I18N.DISPLAY.done());
         dlg.setAutoHide(false);

@@ -98,7 +98,7 @@ public class AppLaunchWindow extends IplantWindowBase implements AnalysisLaunchE
                 hide();
                 return;
             }
-            setHeadingText(template.getLabel());
+            setHeading(template.getLabel());
             fireEvent(new WindowHeadingUpdatedEvent());
         }
         forceLayout();

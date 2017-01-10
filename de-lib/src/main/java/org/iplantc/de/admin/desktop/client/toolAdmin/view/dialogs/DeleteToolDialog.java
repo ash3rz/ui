@@ -43,7 +43,7 @@ public class DeleteToolDialog extends IPlantDialog implements IsHideable {
     public void setText(Throwable caught) {
         AppList appList =
                 AutoBeanCodex.decode(appAutoBeanFactory, AppList.class, caught.getMessage()).as();
-        setHeadingText(appearance.deletePublicToolTitle());
+        setHeading(appearance.deletePublicToolTitle());
 
         HTML bodyBeforeApps = new HTML();
         bodyBeforeApps.setHTML(appearance.deletePublicToolBody());

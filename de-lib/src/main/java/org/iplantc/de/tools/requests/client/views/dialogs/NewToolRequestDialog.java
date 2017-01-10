@@ -85,7 +85,7 @@ public class NewToolRequestDialog extends IPlantDialog {
     @Inject
     NewToolRequestDialog(final NewToolRequestFormViewFactory viewFactory,
                          final NewToolRequestFormPresenterFactory presenterFactory) {
-        setHeadingText(I18N.DISPLAY.requestNewTool());
+        setHeading(I18N.DISPLAY.requestNewTool());
         setPixelSize(480, 400);
         this.setResizable(false);
         setPredefinedButtons(PredefinedButton.OK, PredefinedButton.CANCEL);

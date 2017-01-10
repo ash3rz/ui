@@ -236,7 +236,7 @@ public class ToolbarViewPresenterImpl implements ToolbarView.Presenter, SimpleDo
         // FIXME Do not fire dialog from presenter. Do so from the view.
         IPlantDialog dlg = new IPlantDialog(true);
         dlg.setPredefinedButtons(OK);
-        dlg.setHeadingText(appearance.manageDataLinks());
+        dlg.setHeading(appearance.manageDataLinks());
         dlg.setHideOnButtonClick(true);
         dlg.setWidth(appearance.manageDataLinksDialogWidth());
         dlg.setHeight(appearance.manageDataLinksDialogHeight());

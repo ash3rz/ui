@@ -241,7 +241,7 @@ public class AppDetailsViewImpl extends Composite implements
                     Dialog ipd = new Dialog();
                     ipd.setModal(true);
                     ipd.setHideOnButtonClick(true);
-                    ipd.setHeadingHtml(appearance.copyAppUrl());
+                    ipd.setHeading(appearance.copyAppUrl());
                     ipd.setWidth("500px");
                     ipd.setPredefinedButtons(PredefinedButton.OK);
                     ipd.show();

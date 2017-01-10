@@ -64,9 +64,9 @@ public class TextViewerImpl extends AbstractFileViewer implements
             Window d = new Window();
             File fileObj = TextViewerImpl.this.file;
             if (fileObj != null) {
-                d.setHeadingHtml(fileObj.getName());
+                d.setHeading(fileObj.getName());
             } else {
-                d.setHeadingHtml(appearance.markdownPreviewWindowHeader());
+                d.setHeading(appearance.markdownPreviewWindowHeader());
             }
             d.setSize(appearance.markdownPreviewWindowWidth(),
                       appearance.markdownPreviewWindowHeight());
