@@ -10,7 +10,8 @@ import com.sencha.gxt.theme.base.client.widget.HeaderDefaultAppearance.HeaderSty
 public class ArgumentGroupContentPanelAppearance extends ContentPanelBaseAppearance {
 
     public interface ArgumentGroupContentPanelAppearanceResources extends ContentPanelResources {
-        @Source({"com/sencha/gxt/theme/base/client/panel/ContentPanel.css", "ArgumentGroupContentPanel.css"})
+        @Source({ "com/sencha/gxt/theme/base/client/panel/ContentPanel.gss",
+                  "ArgumentGroupContentPanel.gss" })
         @Override
         ArgumentGroupContentPanelAppearanceStyle style();
     }
@@ -30,7 +31,7 @@ public class ArgumentGroupContentPanelAppearance extends ContentPanelBaseAppeara
     public interface SelectableHeaderResources extends HeaderResources {
 
         @Override
-        @Source({"com/sencha/gxt/theme/base/client/widget/Header.css", "SelectableHeader.css"})
+        @Source({ "com/sencha/gxt/theme/base/client/widget/Header.gss", "SelectableHeader.gss" })
         SelectableHeaderStyle style();
     }
 

@@ -9,7 +9,8 @@ public class IPlantGrayCpHeaderAppearance extends GrayHeaderAppearance {
     public interface IPlantGrayHeaderResources extends GrayHeaderResources {
 
         @Override
-        @Source({"com/sencha/gxt/theme/base/client/widget/Header.css", "com/sencha/gxt/theme/gray/client/panel/GrayHeader.css", "org/iplantc/de/theme/base/client/desktop/window/IPlantGrayWindowHeader.css"})
+        @Source({ "com/sencha/gxt/theme/base/client/widget/Header.gss", "com/sencha/gxt/theme/gray/client/panel/GrayHeader.gss",
+                  "org/iplantc/de/theme/base/client/desktop/window/IPlantGrayWindowHeader.gss" })
         GrayHeaderStyle style();
 
     }

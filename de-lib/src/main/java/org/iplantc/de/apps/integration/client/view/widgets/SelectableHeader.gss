@@ -1,0 +1,22 @@
+@def SELECTION_COLOR #E2E2E2;
+.header {
+    padding: 4px 3px 2px 5px;
+    position: relative;
+    color: #3C3C3C;
+    font-weight: bold;
+    font-size: 11px;
+    font-family: tahoma, arial, verdana, sans-serif;
+    border-color: #d0d0d0;
+    background-image: linear-gradient(bottom, rgb(218, 218, 218) 7%,
+        rgb(250, 250, 250) 78%);
+    height: auto;
+    line-height: 15px;
+/*  border: 1px solid #d0d0d0; */
+    /*Transition*/
+    transition: all 0.25s ease;
+}
+
+.header:hover, .headerSelect {
+    background-image: linear-gradient(bottom, rgb(220, 220, 220) 7%,
+        SELECTION_COLOR 78%);
+}

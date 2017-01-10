@@ -19,7 +19,8 @@ public class TaskButtonCellDefaultAppearance<C> extends ButtonCellDefaultAppeara
                                                                                        TaskButtonCellAppearance<C> {
 
     public interface TaskButtonCellResources extends ButtonCellResources, ClientBundle {
-        @Source({"com/sencha/gxt/theme/base/client/button/ButtonCell.css", "org/iplantc/de/theme/base/client/desktop/views/taskButton/TaskButtonCell.css"})
+        @Source({ "com/sencha/gxt/theme/base/client/button/ButtonCell.gss",
+                  "org/iplantc/de/theme/base/client/desktop/views/taskButton/TaskButtonCell.gss" })
         @Override
         TaskButtonCellStyle style();
 

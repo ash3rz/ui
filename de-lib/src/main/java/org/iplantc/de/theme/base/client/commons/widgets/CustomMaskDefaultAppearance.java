@@ -17,7 +17,7 @@ public class CustomMaskDefaultAppearance extends Mask.MaskDefaultAppearance impl
     }
 
     public interface CustomMaskResources extends MaskResources {
-        @Source({"com/sencha/gxt/core/client/dom/Mask.css", "CustomMask.css"})
+        @Source({ "com/sencha/gxt/core/client/dom/Mask.gss", "CustomMask.gss" })
         CustomMaskStyle css();
     }
 

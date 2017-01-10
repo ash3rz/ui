@@ -14,6 +14,7 @@
 
     <!-- Turn on CssResource pretty printing -->
     <set-configuration-property name="CssResource.style" value="pretty"/>
+    <set-configuration-property name="CssResource.conversionMode" value="strict" />
 
     <inherits name="com.sencha.gxt.ui.GXT" />
     <!-- only compile permutations for FireFox and Chrome -->

@@ -31,6 +31,8 @@
     <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED"/>
     <set-property name="gwt.logging.consoleHandler" value="DISABLED"/>
 
+    <set-configuration-property name="CssResource.conversionMode" value="strict" />
+
     <replace-with class="org.iplantc.de.client.desktop.theme.shortcut.ShortcutCellDefaultAppearance">
         <when-type-is class="org.iplantc.de.client.desktop.widget.ShortcutCell.ShortcutCellAppearance"/>
     </replace-with>

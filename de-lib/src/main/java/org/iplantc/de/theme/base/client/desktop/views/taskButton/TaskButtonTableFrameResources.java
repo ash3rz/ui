@@ -73,7 +73,8 @@ public interface TaskButtonTableFrameResources extends TableFrameResources, Clie
     @ImageOptions(repeatStyle = RepeatStyle.Vertical)
     ImageResource rightPressedBorder();
 
-    @Source({"com/sencha/gxt/theme/base/client/frame/TableFrame.css", "org/iplantc/de/theme/base/client/desktop/views/taskButton/TaskButtonTableFrame.css"})
+    @Source({ "com/sencha/gxt/theme/base/client/frame/TableFrame.gss",
+              "org/iplantc/de/theme/base/client/desktop/views/taskButton/TaskButtonTableFrame.gss" })
     @Override
     TaskButtonTableFrameStyle style();
 

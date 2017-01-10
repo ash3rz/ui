@@ -22,6 +22,8 @@
     <set-property name="gwt.logging.simpleRemoteHandler" value="ENABLED"/>
     <set-property name="gwt.logging.consoleHandler" value="DISABLED"/>
 
+    <set-configuration-property name="CssResource.conversionMode" value="strict" />
+
     <replace-with class="org.iplantc.de.theme.base.client.commons.widgets.IPlantAnchorDefaultAppearance">
         <when-type-is class="org.iplantc.de.commons.client.widgets.IPlantAnchor.IPlantAnchorAppearance" />
     </replace-with>

@@ -9,7 +9,8 @@ import com.sencha.gxt.theme.gray.client.panel.GrayHeaderAppearance;
 public class AppTemplateWizardPropertyContentPanelAppearance extends ContentPanelBaseAppearance {
 
     public interface AppTemplateWizardPropertyContentPanelResources extends ContentPanelResources {
-        @Source({"com/sencha/gxt/theme/base/client/panel/ContentPanel.css", "AppTemplateWizardPropertyContentPanel.css"})
+        @Source({ "com/sencha/gxt/theme/base/client/panel/ContentPanel.gss",
+                  "AppTemplateWizardPropertyContentPanel.gss" })
         @Override
         AppTemplateWizardPropertyContentPanelStyle style();
     }

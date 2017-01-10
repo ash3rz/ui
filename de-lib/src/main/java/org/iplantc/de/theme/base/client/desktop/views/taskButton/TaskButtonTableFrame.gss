@@ -15,161 +15,161 @@
 
 }
 
-@sprite .content {
+.content {
   gwt-image: 'background';	
   height: 28px;
   width: 100%;
   background-size: cover;
 }
 
-@sprite .topLeft {
+.topLeft {
   gwt-image: 'topLeftBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .top {
+.top {
   gwt-image: 'topBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .topRight {
+.topRight {
   gwt-image: 'topRightBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .bottomLeft {
+.bottomLeft {
   gwt-image: 'bottomLeftBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .bottom {
+.bottom {
   gwt-image: 'bottomBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .bottomRight {
+.bottomRight {
   gwt-image: 'bottomRightBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .left {
+.left {
   gwt-image: 'leftBorder';
   width: 1px;
 }
 
-@sprite .right {
+.right {
   gwt-image: 'rightBorder';
 }
 
 
 /* over style */
 
-@sprite .over .content {
+.over .content {
   gwt-image: 'backgroundOverBorder';
   height: 28px;
   width: 100%;
 }
 
-@sprite .over .topLeft {
+.over .topLeft {
   gwt-image: 'topLeftOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .top {
+.over .top {
   gwt-image: 'topOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .topRight {
+.over .topRight {
   gwt-image: 'topRightOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .bottomLeft {
+.over .bottomLeft {
   gwt-image: 'bottomLeftOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .bottom {
+.over .bottom {
   gwt-image: 'bottomOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .right {
+.over .right {
   gwt-image: 'rightOverBorder';
 }
 
-@sprite .over .bottomRight {
+.over .bottomRight {
   gwt-image: 'bottomRightOverBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .over .left {
+.over .left {
   gwt-image: 'leftOverBorder';
   width: 1px;
 }
 
 /* pressed style */
 
-@sprite .pressed .content {
+.pressed .content {
   gwt-image: 'backgroundPressedBorder';
   height: 28px;
   width: 100%;
 }
 
-@sprite .pressed .topLeft {
+.pressed .topLeft {
   gwt-image: 'topLeftPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .top {
+.pressed .top {
   gwt-image: 'topPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .topRight {
+.pressed .topRight {
   gwt-image: 'topRightPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .bottomLeft {
+.pressed .bottomLeft {
   gwt-image: 'bottomLeftPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .bottom {
+.pressed .bottom {
   gwt-image: 'bottomPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .right {
+.pressed .right {
   gwt-image: 'rightPressedBorder';
 }
 
-@sprite .pressed .bottomRight {
+.pressed .bottomRight {
   gwt-image: 'bottomRightPressedBorder';
   height: 0px;
   width: 0px;
 }
 
-@sprite .pressed .left {
+.pressed .left {
   gwt-image: 'leftPressedBorder';
   width: 1px;
 }

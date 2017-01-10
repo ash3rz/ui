@@ -20,10 +20,10 @@ public class DiskResourceSearchCellDefaultAppearance extends TriggerFieldDefault
     public interface DiskResourceSearchCellResources extends TriggerFieldResources {
 
         @Override
-        @Source({"DiskResourceSearchField.css",
-                    "com/sencha/gxt/theme/base/client/field/ValueBaseField.css",
-                    "com/sencha/gxt/theme/base/client/field/TextField.css",
-                "com/sencha/gxt/theme/base/client/field/TriggerField.css"})
+        @Source({ "DiskResourceSearchField.gss",
+                  "com/sencha/gxt/theme/base/client/field/ValueBaseField.gss",
+                  "com/sencha/gxt/theme/base/client/field/TextField.gss",
+                  "com/sencha/gxt/theme/base/client/field/TriggerField.gss"})
         DiskResourceSearchCellStyle css();
         
         @Override
