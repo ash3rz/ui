@@ -10,6 +10,7 @@ import org.iplantc.de.apps.client.events.selection.DetailsCategoryClicked;
 import org.iplantc.de.apps.client.events.selection.DetailsHierarchyClicked;
 import org.iplantc.de.apps.client.events.selection.SaveMarkdownSelected;
 import org.iplantc.de.apps.client.views.details.doc.AppDocMarkdownDialog;
+import org.iplantc.de.apps.client.views.ReactAppDetailsView;
 import org.iplantc.de.apps.client.views.list.cells.AppFavoriteCellWidget;
 import org.iplantc.de.apps.client.views.list.cells.AppRatingCellWidget;
 import org.iplantc.de.apps.shared.AppsModule;
@@ -24,7 +25,6 @@ import org.iplantc.de.desktop.client.presenter.DesktopPresenterImpl;
 import com.google.common.base.Strings;
 import com.google.gwt.cell.client.SafeHtmlCell;
 import com.google.gwt.core.client.GWT;
-import com.google.gwt.core.client.JavaScriptObject;
 import com.google.gwt.core.client.Scheduler;
 import com.google.gwt.dom.client.DivElement;
 import com.google.gwt.editor.client.LeafValueEditor;
@@ -245,15 +245,16 @@ public class AppDetailsViewImpl extends Composite implements
                     ipd.setWidth("500px");
                     ipd.setPredefinedButtons(PredefinedButton.OK);
                     ipd.show();
-                    renderCopyTextArea(ipd.getBody().getId(true),
-                                       appearance.copyAppUrl(),
-                                       GWT.getHostPageBaseURL()
-                                                    + "?type="
-                                                    + DesktopPresenterImpl.TypeQueryValues.APPS
-                                                    + "&app-id=" + app.getId()
-                                                    + "&"
-                                                    + DesktopPresenterImpl.QueryStrings.SYSTEM_ID
-                                                    + "=" + app.getSystemId());
+
+                    final String appUrl = GWT.getHostPageBaseURL()
+                                              + "?type=" + DesktopPresenterImpl.TypeQueryValues.APPS
+                                              + "&app-id=" + app.getId()
+                                              + "&" + DesktopPresenterImpl.QueryStrings.SYSTEM_ID
+                                              + "=" + app.getSystemId();
+
+                    ReactAppDetailsView.renderCopyTextArea(ipd.getBody().getId(true),
+                                                           appearance.copyAppUrl(),
+                                                           appUrl);
                 }
             });
         } else {
@@ -264,54 +265,18 @@ public class AppDetailsViewImpl extends Composite implements
 
             @Override
             public void execute() {
-                final JavaScriptObject presenterShim = getPresenterShim(AppDetailsViewImpl.this);
-                final JavaScriptObject appearanceShim = getAppDetailsAppearanceShim(appearance);
                 final Splittable appJson = AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app));
 
-                renderToolDetails(toolsContainer.getId(), appearanceShim, appJson);
-                renderCategoryTree(hierarchyWidget.getElement().getId(), appJson, presenterShim, appearanceShim);
+                ReactAppDetailsView.renderToolDetails(toolsContainer.getId(),
+                                                      appearance,
+                                                      appJson);
+                ReactAppDetailsView.renderCategoryTree(hierarchyWidget.getElement().getId(),
+                                                       appJson,
+                                                       AppDetailsViewImpl.this,
+                                                       appearance);
             }
         });
     }
-
-    public static native void renderCopyTextArea(String elementID, String btnText, String textToCopy) /*-{
-        $wnd.CyVerseReactComponents.renderCopyTextArea(elementID, btnText, textToCopy);
-    }-*/;
-
-    public static native void renderToolDetails(String elementID, JavaScriptObject appearance, Splittable app) /*-{
-        $wnd.CyVerseReactComponents.renderToolDetails(elementID, appearance, app);
-    }-*/;
-
-    public static native void renderCategoryTree(String elementID, Splittable app, JavaScriptObject presenter, JavaScriptObject appearance) /*-{
-        $wnd.CyVerseReactComponents.renderCategoryTree(elementID, app, presenter, appearance);
-    }-*/;
-
-    public static native JavaScriptObject getAppDetailsAppearanceShim(AppDetailsView.AppDetailsAppearance appearance) /*-{
-        var css = appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::css()();
-
-        return {
-            css: function() {
-                return {
-                    label: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::label(),
-                    value: css.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance.AppDetailsStyle::value()
-                };
-            },
-            detailsLabel:         function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::detailsLabel()(); },
-            toolNameLabel:        function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolNameLabel()(); },
-            descriptionLabel:     function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::descriptionLabel()(); },
-            toolPathLabel:        function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolPathLabel()(); },
-            toolVersionLabel:     function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolVersionLabel()(); },
-            toolAttributionLabel: function() { return appearance.@org.iplantc.de.apps.client.AppDetailsView.AppDetailsAppearance::toolAttributionLabel()(); }
-        };
-    }-*/;
-
-    public static native JavaScriptObject getPresenterShim(AppDetailsView presenter) /*-{
-        return {
-            onDetailsCategoryClicked: function(selection) {
-                presenter.@org.iplantc.de.apps.client.AppDetailsView::onDetailsCategoryClicked(Ljava/lang/String;)(selection);
-            }
-        };
-    }-*/;
 
     @Override
     public void onDetailsCategoryClicked(String modelKey) {
