@@ -255,9 +255,10 @@ public class AppDetailsViewImpl extends Composite implements
                                               + "&" + DesktopPresenterImpl.QueryStrings.SYSTEM_ID
                                               + "=" + app.getSystemId();
 
-                    ReactAppDetailsView.renderCopyTextArea(ipd.getBody().getId(true),
-                                                           appearance.copyAppUrl(),
-                                                           appUrl);
+                    ReactCopyTextArea.CopyProps copyProps = new ReactCopyTextArea.CopyProps();
+                    copyProps.text = appUrl;
+                    copyProps.btnText = appearance.copyAppUrl();
+                    ReactDOM.render(React.createElement(ReactCopyTextArea.CopyTextArea, copyProps), DivElement.as(ipd.getBody()));
                 }
             });
         } else {
