@@ -9,6 +9,7 @@
     <inherits name="org.iplantc.de.tools.requests.ToolRequests"/>
     <inherits name="com.sencha.gxt.theme.gray.Gray"/>
     <inherits name="org.iplantc.de.theme.base.Base"/>
+    <inherits name="gwt.react.React"/>
 
     <source path="client" />
     <source path="shared" />

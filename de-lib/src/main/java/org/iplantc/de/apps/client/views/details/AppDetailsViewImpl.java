@@ -9,8 +9,8 @@ import org.iplantc.de.apps.client.events.selection.AppRatingSelected;
 import org.iplantc.de.apps.client.events.selection.DetailsCategoryClicked;
 import org.iplantc.de.apps.client.events.selection.DetailsHierarchyClicked;
 import org.iplantc.de.apps.client.events.selection.SaveMarkdownSelected;
-import org.iplantc.de.apps.client.views.details.doc.AppDocMarkdownDialog;
 import org.iplantc.de.apps.client.views.ReactAppDetailsView;
+import org.iplantc.de.apps.client.views.details.doc.AppDocMarkdownDialog;
 import org.iplantc.de.apps.client.views.list.cells.AppFavoriteCellWidget;
 import org.iplantc.de.apps.client.views.list.cells.AppRatingCellWidget;
 import org.iplantc.de.apps.shared.AppsModule;
@@ -63,6 +63,9 @@ import com.sencha.gxt.widget.core.client.TabPanel;
 import com.sencha.gxt.widget.core.client.container.AccordionLayoutContainer;
 import com.sencha.gxt.widget.core.client.selection.SelectionChangedEvent;
 import com.sencha.gxt.widget.core.client.tree.Tree;
+
+import gwt.react.client.api.React;
+import gwt.react.client.api.ReactDOM;
 
 /**
  * @author jstroot
@@ -267,9 +270,13 @@ public class AppDetailsViewImpl extends Composite implements
             public void execute() {
                 final Splittable appJson = AutoBeanCodex.encode(AutoBeanUtils.getAutoBean(app));
 
-                ReactAppDetailsView.renderToolDetails(toolsContainer.getId(),
-                                                      appearance,
-                                                      appJson);
+                ReactToolDetails.ToolDetailProps detailProps = new ReactToolDetails.ToolDetailProps();
+
+                detailProps.appearance = appearance;
+                detailProps.app = appJson;
+
+                ReactDOM.render(React.createElement(ReactToolDetails.ToolDetails, detailProps), DivElement.as(toolsContainer.getElement()));
+
                 ReactAppDetailsView.renderCategoryTree(hierarchyWidget.getElement().getId(),
                                                        appJson,
                                                        AppDetailsViewImpl.this,
