@@ -67,6 +67,9 @@ project(':de-lib') {
         compile("org.springframework.security:spring-security-cas:3.2.7.RELEASE")
         compile('net.logstash.logback:logstash-logback-encoder:4.3')
 
+        compile("com.github.gwtreact:gwt-react:0.3.0")
+        compile("com.github.gwtreact:gwt-interop-utils:0.2.0")
+
         testCompile "com.google.gwt.gwtmockito:gwtmockito:$gwtMockitoVer"
         testCompile "org.skyscreamer:jsonassert:1.3.0"
    }
