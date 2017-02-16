@@ -9,7 +9,6 @@ import org.iplantc.de.apps.client.events.selection.AppRatingSelected;
 import org.iplantc.de.apps.client.events.selection.DetailsCategoryClicked;
 import org.iplantc.de.apps.client.events.selection.DetailsHierarchyClicked;
 import org.iplantc.de.apps.client.events.selection.SaveMarkdownSelected;
-import org.iplantc.de.apps.client.views.ReactAppDetailsView;
 import org.iplantc.de.apps.client.views.details.doc.AppDocMarkdownDialog;
 import org.iplantc.de.apps.client.views.list.cells.AppFavoriteCellWidget;
 import org.iplantc.de.apps.client.views.list.cells.AppRatingCellWidget;
@@ -66,6 +65,7 @@ import com.sencha.gxt.widget.core.client.tree.Tree;
 
 import gwt.react.client.api.React;
 import gwt.react.client.api.ReactDOM;
+import gwt.react.client.elements.ReactElement;
 
 /**
  * @author jstroot
@@ -278,10 +278,14 @@ public class AppDetailsViewImpl extends Composite implements
 
                 ReactDOM.render(React.createElement(ReactToolDetails.ToolDetails, detailProps), DivElement.as(toolsContainer.getElement()));
 
-                ReactAppDetailsView.renderCategoryTree(hierarchyWidget.getElement().getId(),
-                                                       appJson,
-                                                       AppDetailsViewImpl.this,
-                                                       appearance);
+                ReactCategoryTree.CategoryTreeProps treeProps = new ReactCategoryTree.CategoryTreeProps();
+                treeProps.app = appJson;
+                treeProps.appearance = appearance;
+                treeProps.presenter = AppDetailsViewImpl.this;
+                ReactElement tree = React.createElement(ReactCategoryTree.CategoryTree, treeProps);
+                DivElement hierarchyElem = DivElement.as(hierarchyWidget.getElement());
+
+                ReactDOM.render(tree,hierarchyElem);
             }
         });
     }
