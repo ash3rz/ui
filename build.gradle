@@ -51,6 +51,16 @@ subprojects {
     }
 }
 
+task npmInstall(type:Exec) {
+    workingDir 'react-components'
+    commandLine 'npm', 'install'
+}
+
+task npmBuild(type:Exec, dependsOn:npmInstall) {
+    workingDir 'react-components'
+    commandLine 'npm', 'run', 'build'
+}
+
 task testReport(type: TestReport) {
     destinationDir = file("$buildDir/reports/allTests")
     // Include the results from the `test` task in all subprojects

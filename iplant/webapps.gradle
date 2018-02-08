@@ -119,6 +119,7 @@ project(':de-webapp') {
 
     task createProdWar(type: Copy) {
         dependsOn bootRepackage
+        dependsOn npmBuild
         into new File( rootProject.projectDir, "target")
         from('build/libs') {
             exclude '**/*draft*.war'
@@ -131,6 +132,7 @@ project(':de-webapp') {
 
     task runWar(type:JavaExec, dependsOn:bootRepackage) {
         group 'Application'
+        dependsOn npmBuild
         description 'Builds and executes the self-executing WAR file.'
         main="-jar"
         args war.archivePath
@@ -138,6 +140,7 @@ project(':de-webapp') {
 
     task runDraftWar(type:JavaExec, dependsOn:draftBootRepackage) {
         group 'Application'
+        dependsOn npmBuild
         description 'Builds and executes the self-executing draft WAR file.'
         main="-jar"
         args draftWar.archivePath
