@@ -24,10 +24,14 @@ import com.sencha.gxt.widget.core.client.tree.TreeStyle;
 
 import java.util.List;
 
+import jsinterop.annotations.JsIgnore;
+import jsinterop.annotations.JsType;
+
 /**
  * Created by jstroot on 3/2/15.
  * @author jstroot
  */
+@JsType
 public interface AppDetailsView extends IsWidget,
                                         Editor<App>,
                                         AppUpdatedEvent.AppUpdatedEventHandler,
@@ -38,9 +42,9 @@ public interface AppDetailsView extends IsWidget,
                                         AppRatingSelected.HasAppRatingSelectedEventHandlers,
                                         DetailsHierarchyClicked.HasDetailsHierarchyClickedHandlers,
                                         DetailsCategoryClicked.HasDetailsCategoryClickedHandlers {
-
+    @JsType
     interface AppDetailsAppearance {
-
+        @JsType
         interface AppDetailsStyle extends CssResource {
 
             String label();
@@ -61,11 +65,11 @@ public interface AppDetailsView extends IsWidget,
         AppDetailsStyle css();
 
         String detailsLabel();
-
+        @JsIgnore
         SafeHtml getAppDocError(Throwable caught);
-
+        @JsIgnore
         SafeHtml getCategoriesHtml(List<List<String>> appGroupHierarchies);
-
+        @JsIgnore
         SafeHtml highlightText(String value, String searchRegexPattern);
 
         String publishedOnLabel();
@@ -81,7 +85,7 @@ public interface AppDetailsView extends IsWidget,
         String categoriesLabel();
 
         String informationTabLabel();
-
+        @JsIgnore
         SafeHtml saveAppDocError(Throwable caught);
 
         String toolInformationTabLabel();
@@ -99,7 +103,7 @@ public interface AppDetailsView extends IsWidget,
         String appUrl();
 
         String copyAppUrl();
-
+        @JsIgnore
         void setTreeIcons(TreeStyle style);
 
         String completedRun();

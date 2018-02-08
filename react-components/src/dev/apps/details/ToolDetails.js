@@ -13,7 +13,6 @@ class ToolDetailsTest extends Component {
             detailsLabel: () => "Details: ",
             toolNameLabel: () => "Name: ",
             descriptionLabel: () => "Description: ",
-            toolPathLabel: () => "Path: ",
             toolVersionLabel: () => "Version: ",
             toolAttributionLabel: () => "Attribution: "
         };

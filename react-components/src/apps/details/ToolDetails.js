@@ -71,14 +71,6 @@ class ToolDetails extends Component {
                     </tr>
                     <tr>
                         <td className={labelClass}>
-                            {appearance.toolPathLabel()}
-                        </td>
-                        <td className={valueClass}>
-                            {toolInfo.location}
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className={labelClass}>
                             {appearance.toolVersionLabel()}
                         </td>
                         <td className={valueClass}>
