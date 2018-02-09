@@ -56,6 +56,11 @@ task npmInstall(type:Exec) {
     commandLine 'npm', 'install'
 }
 
+task npmStart(type:Exec, dependsOn: npmInstall) {
+    workingDir 'react-components'
+    commandLine 'npm', 'start'
+}
+
 task npmBuild(type:Exec, dependsOn:npmInstall) {
     workingDir 'react-components'
     commandLine 'npm', 'run', 'build'
